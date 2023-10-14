@@ -1,0 +1,13 @@
+<button
+  mat-flat-button
+  color="primary"
+  (click)="openStudentDialog()"
+  class="mat-button"
+>
+  <mat-icon>add</mat-icon> Crear alumno
+</button>
+<app-students-list
+  [dataSource]="students"
+  (deleteStudent)="onDeleteStudent($event)"
+  (editStudent)="onEditStudent($event)"
+></app-students-list>

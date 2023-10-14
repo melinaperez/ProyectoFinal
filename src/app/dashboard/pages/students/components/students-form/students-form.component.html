@@ -1,0 +1,73 @@
+<h1 mat-dialog-title>
+  {{ student ? "Editar alumno" : "Crear alumno" }}
+</h1>
+<div mat-dialog-content>
+  <form [formGroup]="userForm">
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Nombre</mat-label>
+          <input formControlName="name" matInput />
+          <mat-error>{{ userForm.get("name")?.errors | formErrors }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Apellido</mat-label>
+          <input formControlName="lastname" matInput />
+          <mat-error>{{
+            userForm.get("lastname")?.errors | formErrors
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput />
+          <mat-error>{{
+            userForm.get("email")?.errors | formErrors
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Género</mat-label>
+          <mat-select [formControlName]="'gender'">
+            <mat-option [value]="1"> Femenino </mat-option>
+            <mat-option [value]="2"> Masculino </mat-option>
+            <mat-option [value]="3"> X </mat-option>
+          </mat-select>
+          <mat-error>{{
+            userForm.get("gender")?.errors | formErrors
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Fecha Nacimiento</mat-label>
+          <input matInput [matDatepicker]="dp" formControlName="birthdate" />
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="dp"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #dp></mat-datepicker>
+          <mat-error>{{
+            userForm.get("birthdate")?.errors | formErrors
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-flat-button
+    color="primary"
+    (click)="onSubmit()"
+    [disabled]="userForm.invalid"
+  >
+    Guardar
+  </button>
+  <button mat-dialog-close mat-button>Cancelar</button>
+</div>
