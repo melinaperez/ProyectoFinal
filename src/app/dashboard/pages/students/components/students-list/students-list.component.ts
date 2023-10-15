@@ -35,8 +35,10 @@ export class StudentsListComponent implements AfterViewInit {
   displayedColumns: string[] = [
     'id',
     'fullname',
-    'email',
+    'dni',
     'birthdate',
+    'email',
+    'telephone',
     'actions',
   ];
 

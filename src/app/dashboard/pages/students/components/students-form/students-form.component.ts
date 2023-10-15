@@ -11,6 +11,7 @@ import {
 } from '@angular/material-moment-adapter';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Student } from '../../models';
+import { minDate } from 'src/app/shared/validators/custom-validators';
 
 export const MY_FORMATS = {
   parse: {
@@ -61,9 +62,11 @@ export class StudentsFormComponent {
           Validators.maxLength(20),
         ],
       ],
+      dni: ['', [Validators.required, Validators.pattern('^[0-9]+')]],
       email: ['', [Validators.required, Validators.email]],
-      birthdate: ['', Validators.required],
+      birthdate: ['', Validators.required, minDate],
       gender: ['', Validators.required],
+      telephone: ['', Validators.required],
     });
 
     if (this.student) {

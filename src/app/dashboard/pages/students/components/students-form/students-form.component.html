@@ -3,6 +3,8 @@
 </h1>
 <div mat-dialog-content>
   <form [formGroup]="userForm">
+    <h2>Datos Personales</h2>
+    <mat-divider></mat-divider>
     <div class="row">
       <div class="col-6">
         <mat-form-field class="w-100">
@@ -22,24 +24,9 @@
       </div>
       <div class="col-6">
         <mat-form-field class="w-100">
-          <mat-label>Email</mat-label>
-          <input formControlName="email" matInput />
-          <mat-error>{{
-            userForm.get("email")?.errors | formErrors
-          }}</mat-error>
-        </mat-form-field>
-      </div>
-      <div class="col-6">
-        <mat-form-field class="w-100">
-          <mat-label>Género</mat-label>
-          <mat-select [formControlName]="'gender'">
-            <mat-option [value]="1"> Femenino </mat-option>
-            <mat-option [value]="2"> Masculino </mat-option>
-            <mat-option [value]="3"> X </mat-option>
-          </mat-select>
-          <mat-error>{{
-            userForm.get("gender")?.errors | formErrors
-          }}</mat-error>
+          <mat-label>DNI</mat-label>
+          <input formControlName="dni" matInput />
+          <mat-error>{{ userForm.get("dni")?.errors | formErrors }}</mat-error>
         </mat-form-field>
       </div>
       <div class="col-6">
@@ -55,6 +42,41 @@
           <mat-error>{{
             userForm.get("birthdate")?.errors | formErrors
           }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Género</mat-label>
+          <mat-select [formControlName]="'gender'">
+            <mat-option [value]="1"> Femenino </mat-option>
+            <mat-option [value]="2"> Masculino </mat-option>
+            <mat-option [value]="3"> X </mat-option>
+            <mat-option [value]="4"> N/R </mat-option>
+          </mat-select>
+          <mat-error>{{
+            userForm.get("gender")?.errors | formErrors
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <h2>Contacto</h2>
+    <mat-divider></mat-divider>
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput />
+          <mat-icon matSuffix>mail</mat-icon>
+          <mat-error>{{
+            userForm.get("email")?.errors | formErrors
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Teléfono</mat-label>
+          <input formControlName="telephone" matInput />
+          <mat-icon matSuffix>call</mat-icon>
         </mat-form-field>
       </div>
     </div>

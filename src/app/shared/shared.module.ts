@@ -14,9 +14,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FullnamePipe } from './pipes/fullname.pipe';
 import { FormErrorsPipe } from './pipes/form-errors.pipe';
+import { HeadlineDirective } from './directives/headline.directive';
 
 @NgModule({
-  declarations: [FullnamePipe, FormErrorsPipe],
+  declarations: [FullnamePipe, FormErrorsPipe, HeadlineDirective],
   imports: [CommonModule],
   exports: [
     MatButtonModule,
@@ -33,6 +34,7 @@ import { FormErrorsPipe } from './pipes/form-errors.pipe';
     ReactiveFormsModule,
     FullnamePipe,
     FormErrorsPipe,
+    HeadlineDirective
   ],
 })
 export class SharedModule {}

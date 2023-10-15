@@ -1,6 +1,6 @@
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer
-    style="width: 200px"
+    style="width: 250px"
     [opened]="showSidebar"
     #drawer
     class="example-sidenav"
@@ -13,7 +13,7 @@
   <div class="example-sidenav-content">
     <app-toolbar (toggleSidebar)="showSidebar = !showSidebar"></app-toolbar>
     <main style="padding: 1rem">
-      <h1 style="font-weight: bolder" appHeadline>Listado de Alumnos</h1>
+      <h1 fontWeight="bolder" appHeadline>Listado de Alumnos</h1>
       <app-students></app-students>
     </main>
   </div>

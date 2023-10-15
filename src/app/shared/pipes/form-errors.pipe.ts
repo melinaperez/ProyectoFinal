@@ -33,6 +33,14 @@ export class FormErrorsPipe implements PipeTransform {
           'El largo máximo es ' + value['maxlength'].requiredLength
         );
       }
+
+      if ('pattern' in value) {
+        errorMessages.push('Sólo se aceptan números');
+      }
+
+      if ('minDate' in value) {
+        errorMessages.push('La fecha debe ser menor a hoy');
+      }
     }
 
     return errorMessages.join('. ');

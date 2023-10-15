@@ -5,3 +5,9 @@ table {
 th.mat-sort-header-sorted {
   color: black;
 }
+
+.row-search {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}

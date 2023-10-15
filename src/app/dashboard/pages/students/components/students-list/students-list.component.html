@@ -1,8 +1,13 @@
-<div class="row">
-  <div class="class-12">
-    <mat-form-field appearance="outline" class="w-100">
-      <mat-label>Filtro</mat-label>
-      <input matInput (keyup)="applyFilter($event)" #input />
+<div class="row-search">
+  <div class="class-6">
+    <mat-form-field>
+      <mat-icon matSuffix>search</mat-icon>
+      <input
+        matInput
+        (keyup)="applyFilter($event)"
+        #input
+        placeholder="Buscar"
+      />
     </mat-form-field>
   </div>
 </div>
@@ -19,16 +24,26 @@
       <td mat-cell *matCellDef="let student">{{ student | fullname }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef mat-sort>Email</th>
-      <td mat-cell *matCellDef="let student">{{ student.email }}</td>
+    <ng-container matColumnDef="dni">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>DNI</th>
+      <td mat-cell *matCellDef="let student">{{ student.dni }}</td>
     </ng-container>
 
     <ng-container matColumnDef="birthdate">
       <th mat-header-cell *matHeaderCellDef mat-sort>Fecha nacimiento</th>
       <td mat-cell *matCellDef="let student">
-        {{ student.birthdate | date : "d/M/yy" }}
+        {{ student.birthdate | date : "dd/MM/yyyy" }}
       </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort>Email</th>
+      <td mat-cell *matCellDef="let student">{{ student.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="telephone">
+      <th mat-header-cell *matHeaderCellDef mat-sort>Teléfono</th>
+      <td mat-cell *matCellDef="let student">{{ student.telephone }}</td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
