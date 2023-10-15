@@ -52,7 +52,7 @@ export class StudentsComponent {
   }
 
   onDeleteStudent(studentId: number): void {
-    if (confirm('Está seguro?'))
+    if (confirm('¿Está seguro de eliminar este alumno?'))
       this.students.data = this.students.data.filter((s) => s.id !== studentId);
   }
 }
