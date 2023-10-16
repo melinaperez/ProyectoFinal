@@ -26,7 +26,7 @@ export class StudentsComponent {
               ...this.students.data,
               {
                 ...v,
-                id: new Date().getTime(),
+                id: this.students.data.length + 1,
               },
             ];
           }
