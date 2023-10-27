@@ -1,0 +1,14 @@
+<h1 fontWeight="bolder" appHeadline>Listado de Cursos</h1>
+<button
+  mat-flat-button
+  color="primary"
+  (click)="openCourseDialog()"
+  class="mat-button"
+>
+  <mat-icon>add</mat-icon> Crear curso
+</button>
+<app-courses-list
+  *ngIf="courses$ | async as coursesObtained"
+  [dataSource]="coursesObtained"
+  (editCourse)="onEditCourse($event)"
+></app-courses-list>

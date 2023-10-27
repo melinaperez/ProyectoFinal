@@ -1,17 +1,17 @@
 <mat-nav-list>
-  <mat-list-item>
+  <mat-list-item routerLink="home">
     <mat-icon matListItemIcon>home</mat-icon>
     <a>Home</a>
   </mat-list-item>
-  <mat-list-item>
+  <mat-list-item routerLink="courses">
     <mat-icon matListItemIcon>menu_book</mat-icon>
     <a>Cursos</a>
   </mat-list-item>
-  <mat-list-item [activated]="true">
+  <mat-list-item routerLink="students" [activated]="true">
     <mat-icon matListItemIcon>groups</mat-icon>
     <a>Alumnos</a>
   </mat-list-item>
-  <mat-list-item>
+  <mat-list-item routerLink="enrollments">
     <mat-icon matListItemIcon>assignment_ind</mat-icon>
     <a>Inscripciones</a>
   </mat-list-item>

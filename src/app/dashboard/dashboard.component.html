@@ -13,8 +13,7 @@
   <div class="example-sidenav-content">
     <app-toolbar (toggleSidebar)="showSidebar = !showSidebar"></app-toolbar>
     <main style="padding: 1rem">
-      <h1 fontWeight="bolder" appHeadline>Listado de Alumnos</h1>
-      <app-students></app-students>
+      <router-outlet></router-outlet>
     </main>
   </div>
 </mat-drawer-container>

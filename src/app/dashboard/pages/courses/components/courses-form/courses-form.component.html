@@ -1,0 +1,68 @@
+<h1 mat-dialog-title>
+  {{ course ? "Editar curso" : "Crear curso" }}
+</h1>
+<div mat-dialog-content>
+  <form [formGroup]="courseForm">
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Descripcion</mat-label>
+          <input formControlName="description" matInput />
+          <mat-error>{{
+            courseForm.get("description")?.errors | formErrors
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Duración (horas)</mat-label>
+          <input formControlName="duration" matInput />
+          <mat-error>{{
+            courseForm.get("duration")?.errors | formErrors
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Fecha inicio</mat-label>
+          <input matInput [matDatepicker]="dp" formControlName="startDate" />
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="dp"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #dp></mat-datepicker>
+          <mat-error>{{
+            courseForm.get("startDate")?.errors | formErrors
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Fecha finalización</mat-label>
+          <input matInput [matDatepicker]="dpe" formControlName="endDate" />
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="dpe"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #dpe></mat-datepicker>
+          <mat-error>{{
+            courseForm.get("endDate")?.errors | formErrors
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-flat-button
+    color="primary"
+    (click)="onSubmit()"
+    [disabled]="courseForm.invalid"
+  >
+    Guardar
+  </button>
+  <button mat-dialog-close mat-button>Cancelar</button>
+</div>
