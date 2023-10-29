@@ -5,3 +5,27 @@
 mat-form-field {
   margin-top: 5px;
 }
+
+.row-tab {
+  margin-top: 10px;
+}
+
+mat-form-field:has(input[readonly]) {
+  opacity: 15;
+}
+
+.w-100 {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.back {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
