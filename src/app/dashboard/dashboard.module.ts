@@ -9,7 +9,6 @@ import { SharedModule } from '../shared/shared.module';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { RouterModule } from '@angular/router';
-import { CoursesComponent } from './pages/courses/courses.component';
 import { CoursesModule } from './pages/courses/courses.module';
 
 @NgModule({

@@ -7,6 +7,7 @@ import { StudentsComponent } from './dashboard/pages/students/students.component
 import { StudentsDetailsComponent } from './dashboard/pages/students/components/students-details/students-details.component';
 import { AuthComponent } from './auth/auth/auth.component';
 import { EnrollmentsComponent } from './dashboard/pages/enrollments/enrollments.component';
+import { CoursesDetailsComponent } from './dashboard/pages/courses/components/courses-details/courses-details.component';
 
 const routes: Routes = [
   {
@@ -22,11 +23,15 @@ const routes: Routes = [
         component: CoursesComponent,
       },
       {
+        path: 'courses/:id',
+        component: CoursesDetailsComponent,
+      },
+      {
         path: 'students',
         component: StudentsComponent,
       },
       {
-        path: 'students/detail/:id',
+        path: 'students/:id',
         component: StudentsDetailsComponent,
       },
       {

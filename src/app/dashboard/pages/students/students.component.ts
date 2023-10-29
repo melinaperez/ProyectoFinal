@@ -3,7 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { StudentsFormComponent } from './components/students-form/students-form.component';
 import { Student } from './models';
 import { MatTableDataSource } from '@angular/material/table';
-import { StudentsData } from './data/students-data';
+import { Observable, map } from 'rxjs';
+import { StudentsService } from './students.service';
 
 @Component({
   selector: 'app-students',
@@ -11,9 +12,20 @@ import { StudentsData } from './data/students-data';
   styleUrls: ['./students.component.scss'],
 })
 export class StudentsComponent {
-  students = new MatTableDataSource<Student>(StudentsData);
+  students = new MatTableDataSource<Student>();
+  students$: Observable<MatTableDataSource<Student>>;
 
-  constructor(private matDialog: MatDialog) {}
+  constructor(
+    private studentsService: StudentsService,
+    private matDialog: MatDialog
+  ) {
+    this.students$ = this.studentsService.getStudents$().pipe(
+      map((data) => {
+        this.students.data = data;
+        return this.students;
+      })
+    );
+  }
 
   openStudentDialog(): void {
     this.matDialog
@@ -22,13 +34,17 @@ export class StudentsComponent {
       .subscribe({
         next: (v) => {
           if (!!v) {
-            this.students.data = [
-              ...this.students.data,
-              {
+            this.students$ = this.studentsService
+              .createStudent$({
                 ...v,
                 id: this.students.data.length + 1,
-              },
-            ];
+              })
+              .pipe(
+                map((data) => {
+                  this.students.data = data;
+                  return this.students;
+                })
+              );
           }
         },
       });
@@ -43,16 +59,26 @@ export class StudentsComponent {
       .subscribe({
         next: (v) => {
           if (!!v) {
-            this.students.data = this.students.data.map((s) =>
-              s.id === student.id ? { ...s, ...v } : s
-            );
+            this.students$ = this.studentsService
+              .editStudent$(student.id, v)
+              .pipe(
+                map((data) => {
+                  this.students.data = data;
+                  return this.students;
+                })
+              );
           }
         },
       });
   }
 
   onDeleteStudent(studentId: number): void {
-    if (confirm('¿Está seguro de eliminar este alumno?'))
-      this.students.data = this.students.data.filter((s) => s.id !== studentId);
+    if (confirm('¿Está seguro de eliminar al alumno?'))
+      this.students$ = this.studentsService.deleteStudent$(studentId).pipe(
+        map((data) => {
+          this.students.data = data;
+          return this.students;
+        })
+      );
   }
 }

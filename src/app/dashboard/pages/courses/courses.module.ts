@@ -5,6 +5,7 @@ import { CoursesListComponent } from './components/courses-list/courses-list.com
 import { CoursesFormComponent } from './components/courses-form/courses-form.component';
 import { CoursesDetailsComponent } from './components/courses-details/courses-details.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CoursesFormComponent,
     CoursesDetailsComponent,
   ],
-  imports: [CommonModule, SharedModule],
+  imports: [CommonModule, SharedModule, RouterModule],
   exports: [CoursesComponent],
 })
 export class CoursesModule {}

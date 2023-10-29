@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Course } from './models/models';
+import { Course } from './models/course.model';
 import { CoursesService } from './courses.service';
 import { Observable, map } from 'rxjs';
 import { CoursesFormComponent } from './components/courses-form/courses-form.component';
@@ -68,5 +68,15 @@ export class CoursesComponent {
           }
         },
       });
+  }
+
+  onDeleteCourse(courseId: number): void {
+    if (confirm('¿Está seguro de eliminar el curso?'))
+      this.courses$ = this.coursesService.deleteCourse$(courseId).pipe(
+        map((data) => {
+          this.courses.data = data;
+          return this.courses;
+        })
+      );
   }
 }

@@ -46,6 +46,7 @@ export class StudentsFormComponent {
     @Inject(MAT_DIALOG_DATA) public student?: Student
   ) {
     this.userForm = this.formBuilder.group({
+      id: [],
       name: [
         '',
         [

@@ -8,7 +8,7 @@ import {
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Course } from '../../models/models';
+import { Course } from '../../models/course.model';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { Observable } from 'rxjs';
 
@@ -34,10 +34,11 @@ export class CoursesListComponent {
 
   displayedColumns: string[] = [
     'id',
-    'description',
+    'name',
     'duration',
     'startDate',
     'endDate',
+    'teacher',
     'actions',
   ];
 

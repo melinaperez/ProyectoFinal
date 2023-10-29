@@ -1,1 +1,62 @@
-<p>students-details works!</p>
+<mat-tab-group dynamicHeight>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">person</mat-icon>
+      Datos Personales
+    </ng-template>
+    <div class="row">
+      <div class="col-3">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Apellido</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>DNI</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Fecha Nacimiento</mat-label>
+          <input matInput [matDatepicker]="dp" />
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="dp"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #dp></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Género</mat-label>
+        <mat-select>
+          <mat-option [value]="1"> Femenino </mat-option>
+          <mat-option [value]="2"> Masculino </mat-option>
+          <mat-option [value]="3"> X </mat-option>
+          <mat-option [value]="4"> N/R </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">contacts</mat-icon>
+      Datos de Contacto
+    </ng-template>
+    Content 2
+  </mat-tab>
+</mat-tab-group>

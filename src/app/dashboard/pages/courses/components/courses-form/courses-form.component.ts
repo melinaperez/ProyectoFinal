@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Course } from '../../models/models';
+import { Course } from '../../models/course.model';
 
 @Component({
   selector: 'app-courses-form',
@@ -17,6 +17,7 @@ export class CoursesFormComponent {
     @Inject(MAT_DIALOG_DATA) public course?: Course
   ) {
     this.courseForm = this.formBuilder.group({
+      id: [],
       description: [
         '',
         [

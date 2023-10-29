@@ -5,6 +5,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { StudentsListComponent } from './components/students-list/students-list.component';
 import { StudentsComponent } from './students.component';
 import { StudentsDetailsComponent } from './components/students-details/students-details.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import { StudentsDetailsComponent } from './components/students-details/students
     StudentsComponent,
     StudentsDetailsComponent,
   ],
-  imports: [CommonModule, SharedModule],
+  imports: [CommonModule, SharedModule, RouterModule],
   exports: [StudentsComponent],
 })
 export class StudentsModule {}

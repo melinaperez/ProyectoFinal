@@ -1,0 +1,14 @@
+.card {
+  max-width: 400px;
+}
+
+mat-card-actions {
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.dates {
+  font-style: italic;
+  font-weight: bolder;
+  margin-top: 5px;
+}

@@ -8,7 +8,8 @@
   <mat-icon>add</mat-icon> Crear alumno
 </button>
 <app-students-list
-  [dataSource]="students"
+  *ngIf="students$ | async as studentsObtained"
+  [dataSource]="studentsObtained"
   (deleteStudent)="onDeleteStudent($event)"
   (editStudent)="onEditStudent($event)"
 ></app-students-list>

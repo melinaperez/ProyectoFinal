@@ -11,4 +11,5 @@
   *ngIf="courses$ | async as coursesObtained"
   [dataSource]="coursesObtained"
   (editCourse)="onEditCourse($event)"
+  (deleteCourse)="onDeleteCourse($event)"
 ></app-courses-list>

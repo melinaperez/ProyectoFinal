@@ -12,6 +12,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
 import { FullnamePipe } from './pipes/fullname.pipe';
 import { FormErrorsPipe } from './pipes/form-errors.pipe';
 import { HeadlineDirective } from './directives/headline.directive';
@@ -31,10 +33,12 @@ import { HeadlineDirective } from './directives/headline.directive';
     MatPaginatorModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatCardModule,
+    MatTabsModule,
     ReactiveFormsModule,
     FullnamePipe,
     FormErrorsPipe,
-    HeadlineDirective
+    HeadlineDirective,
   ],
 })
 export class SharedModule {}
