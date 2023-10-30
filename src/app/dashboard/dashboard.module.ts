@@ -10,6 +10,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { RouterModule } from '@angular/router';
 import { CoursesModule } from './pages/courses/courses.module';
+import { UsersModule } from './pages/users/users.module';
 
 @NgModule({
   declarations: [DashboardComponent, SidebarComponent, ToolbarComponent],
@@ -20,6 +21,7 @@ import { CoursesModule } from './pages/courses/courses.module';
     HomeModule,
     StudentsModule,
     CoursesModule,
+    UsersModule,
     SharedModule,
     RouterModule,
   ],

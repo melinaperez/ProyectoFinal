@@ -5,10 +5,7 @@ import {
   MAT_DATE_FORMATS,
   MAT_DATE_LOCALE,
 } from '@angular/material/core';
-import {
-  MomentDateModule,
-  MomentDateAdapter,
-} from '@angular/material-moment-adapter';
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Student } from '../../models';
 import { minDate } from 'src/app/shared/validators/custom-validators';
@@ -38,14 +35,14 @@ export const MY_FORMATS = {
   ],
 })
 export class StudentsFormComponent {
-  userForm: FormGroup;
+  studentForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
     private matDialogRef: MatDialogRef<StudentsFormComponent>,
     @Inject(MAT_DIALOG_DATA) public student?: Student
   ) {
-    this.userForm = this.formBuilder.group({
+    this.studentForm = this.formBuilder.group({
       id: [],
       name: [
         '',
@@ -71,15 +68,15 @@ export class StudentsFormComponent {
     });
 
     if (this.student) {
-      this.userForm.patchValue(this.student);
+      this.studentForm.patchValue(this.student);
     }
   }
 
   onSubmit(): void {
-    if (this.userForm.invalid) {
-      this.userForm.markAllAsTouched();
+    if (this.studentForm.invalid) {
+      this.studentForm.markAllAsTouched();
     } else {
-      this.matDialogRef.close(this.userForm.value);
+      this.matDialogRef.close(this.studentForm.value);
     }
   }
 }

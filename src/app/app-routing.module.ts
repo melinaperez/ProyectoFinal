@@ -8,6 +8,8 @@ import { StudentsDetailsComponent } from './dashboard/pages/students/components/
 import { AuthComponent } from './auth/auth/auth.component';
 import { EnrollmentsComponent } from './dashboard/pages/enrollments/enrollments.component';
 import { CoursesDetailsComponent } from './dashboard/pages/courses/components/courses-details/courses-details.component';
+import { UsersComponent } from './dashboard/pages/users/users.component';
+import { UsersDetailsComponent } from './dashboard/pages/users/components/users-details/users-details.component';
 
 const routes: Routes = [
   {
@@ -37,6 +39,14 @@ const routes: Routes = [
       {
         path: 'enrollments',
         component: EnrollmentsComponent,
+      },
+      {
+        path: 'users',
+        component: UsersComponent,
+      },
+      {
+        path: 'users/:id',
+        component: UsersDetailsComponent,
       },
       {
         path: '**',

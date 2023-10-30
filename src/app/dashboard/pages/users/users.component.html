@@ -1,0 +1,15 @@
+<h1 fontWeight="bolder" appHeadline>Listado de Usuarios</h1>
+<button
+  mat-flat-button
+  color="primary"
+  class="mat-button"
+  (click)="openUserDialog()"
+>
+  <mat-icon>add</mat-icon> Crear alumno
+</button>
+<app-users-list
+  *ngIf="users$ | async as usersObtained"
+  [dataSource]="usersObtained"
+  (deleteUser)="onDeleteUser($event)"
+  (editUser)="onEditUser($event)"
+></app-users-list>

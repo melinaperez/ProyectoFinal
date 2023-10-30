@@ -1,0 +1,66 @@
+<h1 mat-dialog-title>
+  {{ user ? "Editar usuario" : "Crear usuario" }}
+</h1>
+<div mat-dialog-content>
+  <form [formGroup]="userForm">
+    <h2>Datos Personales</h2>
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Nombre</mat-label>
+          <input formControlName="name" matInput />
+          <mat-error>{{ userForm.get("name")?.errors | formErrors }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Apellido</mat-label>
+          <input formControlName="lastname" matInput />
+          <mat-error>{{
+            userForm.get("lastname")?.errors | formErrors
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>DNI</mat-label>
+          <input formControlName="dni" matInput />
+          <mat-error>{{ userForm.get("dni")?.errors | formErrors }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6" *ngIf="user">
+        <mat-form-field class="w-100">
+          <mat-label>Fecha inscripción</mat-label>
+          <input
+            matInput
+            [matDatepicker]="dp"
+            formControlName="registrationDate"
+            readonly
+          />
+          <mat-datepicker #dp></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput />
+          <mat-icon matSuffix>mail</mat-icon>
+          <mat-error>{{
+            userForm.get("email")?.errors | formErrors
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-flat-button
+    color="primary"
+    (click)="onSubmit()"
+    [disabled]="userForm.invalid"
+  >
+    Guardar
+  </button>
+  <button mat-dialog-close mat-button>Cancelar</button>
+</div>

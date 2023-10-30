@@ -7,27 +7,27 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { Student } from '../../models';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatSort, Sort } from '@angular/material/sort';
+import { User } from '../../models/user.models';
 
 @Component({
-  selector: 'app-students-list',
-  templateUrl: './students-list.component.html',
-  styleUrls: ['./students-list.component.scss'],
+  selector: 'app-users-list',
+  templateUrl: './users-list.component.html',
+  styleUrls: ['./users-list.component.scss'],
 })
-export class StudentsListComponent implements AfterViewInit {
+export class UsersListComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   @Input()
-  dataSource!: MatTableDataSource<Student>;
+  dataSource!: MatTableDataSource<User>;
 
   @Output()
-  deleteStudent = new EventEmitter<number>();
+  deleteUser = new EventEmitter<number>();
 
   @Output()
-  editStudent = new EventEmitter<Student>();
+  editUser = new EventEmitter<User>();
 
   constructor() {}
 
@@ -35,9 +35,8 @@ export class StudentsListComponent implements AfterViewInit {
     'id',
     'fullname',
     'dni',
-    'birthdate',
+    'registrationDate',
     'email',
-    'telephone',
     'actions',
   ];
 

@@ -2,7 +2,7 @@
   {{ student ? "Editar alumno" : "Crear alumno" }}
 </h1>
 <div mat-dialog-content>
-  <form [formGroup]="userForm">
+  <form [formGroup]="studentForm">
     <h2>Datos Personales</h2>
     <mat-divider></mat-divider>
     <div class="row">
@@ -10,7 +10,9 @@
         <mat-form-field class="w-100">
           <mat-label>Nombre</mat-label>
           <input formControlName="name" matInput />
-          <mat-error>{{ userForm.get("name")?.errors | formErrors }}</mat-error>
+          <mat-error>{{
+            studentForm.get("name")?.errors | formErrors
+          }}</mat-error>
         </mat-form-field>
       </div>
       <div class="col-6">
@@ -18,7 +20,7 @@
           <mat-label>Apellido</mat-label>
           <input formControlName="lastname" matInput />
           <mat-error>{{
-            userForm.get("lastname")?.errors | formErrors
+            studentForm.get("lastname")?.errors | formErrors
           }}</mat-error>
         </mat-form-field>
       </div>
@@ -26,7 +28,9 @@
         <mat-form-field class="w-100">
           <mat-label>DNI</mat-label>
           <input formControlName="dni" matInput />
-          <mat-error>{{ userForm.get("dni")?.errors | formErrors }}</mat-error>
+          <mat-error>{{
+            studentForm.get("dni")?.errors | formErrors
+          }}</mat-error>
         </mat-form-field>
       </div>
       <div class="col-6">
@@ -40,7 +44,7 @@
           ></mat-datepicker-toggle>
           <mat-datepicker #dp></mat-datepicker>
           <mat-error>{{
-            userForm.get("birthdate")?.errors | formErrors
+            studentForm.get("birthdate")?.errors | formErrors
           }}</mat-error>
         </mat-form-field>
       </div>
@@ -54,7 +58,7 @@
             <mat-option [value]="4"> N/R </mat-option>
           </mat-select>
           <mat-error>{{
-            userForm.get("gender")?.errors | formErrors
+            studentForm.get("gender")?.errors | formErrors
           }}</mat-error>
         </mat-form-field>
       </div>
@@ -68,7 +72,7 @@
           <input formControlName="email" matInput />
           <mat-icon matSuffix>mail</mat-icon>
           <mat-error>{{
-            userForm.get("email")?.errors | formErrors
+            studentForm.get("email")?.errors | formErrors
           }}</mat-error>
         </mat-form-field>
       </div>
@@ -87,7 +91,7 @@
     mat-flat-button
     color="primary"
     (click)="onSubmit()"
-    [disabled]="userForm.invalid"
+    [disabled]="studentForm.invalid"
   >
     Guardar
   </button>

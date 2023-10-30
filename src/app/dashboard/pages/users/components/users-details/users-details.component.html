@@ -1,0 +1,60 @@
+<div class="row">
+  <mat-tab-group dynamicHeight>
+    <mat-tab class="tab">
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">person</mat-icon>
+        Datos
+      </ng-template>
+      <div class="row-tab">
+        <div class="row">
+          <div class="col-3">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Nombre</mat-label>
+              <input matInput value="{{ user?.name }}" readonly />
+            </mat-form-field>
+          </div>
+          <div class="col-3">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Apellido</mat-label>
+              <input matInput value="{{ user?.lastname }}" readonly />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>DNI</mat-label>
+            <input matInput value="{{ user?.dni }}" readonly />
+          </mat-form-field>
+        </div>
+        <div class="col-3">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Fecha Nacimiento</mat-label>
+            <input
+              matInput
+              value="{{ user?.registrationDate | date : 'dd/MM/yyyy' }}"
+              readonly
+            />
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker #dp></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput value="{{ user?.email }}" />
+            <mat-icon matSuffix>mail</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+<div class="back">
+  <button mat-mini-fab color="warn" (click)="onBack()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
