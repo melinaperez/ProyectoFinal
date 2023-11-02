@@ -13,6 +13,7 @@ import { CoursesModule } from './pages/courses/courses.module';
 import { UsersModule } from './pages/users/users.module';
 import { TeachersModule } from './pages/teachers/teachers.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [DashboardComponent, SidebarComponent, ToolbarComponent],

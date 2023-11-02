@@ -4,6 +4,7 @@ import { Observable, map } from 'rxjs';
 import { StudentsService } from '../students/students.service';
 import { Router } from '@angular/router';
 import { Metric } from './models/metric';
+import { CarouselImage } from '../../components/carousel/models';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,12 @@ import { Metric } from './models/metric';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  slides: CarouselImage[] = new Array(3).fill({
+    id: -1,
+    src: '',
+    title: '',
+    subtitle: '',
+  });
   usersLength: number = 0;
   usersLength$: Observable<number>;
   studentsLength: number = 0;
@@ -23,6 +30,21 @@ export class HomeComponent {
     private studentsService: StudentsService,
     private router: Router
   ) {
+    this.slides = [
+      {
+        src: 'https://www.infobae.com/new-resizer/kHZdEQoZ7wy6MmLa1i-gdbF1CAY=/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/04/24133716/avengers-endgame-22.jpg',
+        alt: '',
+      },
+      {
+        src: 'https://sm.ign.com/ign_es/news/m/marvel-rep/marvel-reportedly-considered-bringing-back-original-avengers_pdr4.jpg',
+        alt: '',
+      },
+      {
+        src: 'https://images.tntdrama.com/tnt/$dyna_params/https%3A%2F%2Fi.cdn.tntdrama.com%2Fassets%2Fimages%2F2022%2F05%2FAvengers-Endgame-KA-1600x900.jpg',
+        alt: '',
+      },
+    ];
+
     this.usersLength$ = this.usersService.getusersLength$().pipe(
       map((data) => {
         this.usersLength = data;
