@@ -1,62 +1,24 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HomeComponent } from './dashboard/pages/home/home.component';
-import { CoursesComponent } from './dashboard/pages/courses/courses.component';
-import { StudentsComponent } from './dashboard/pages/students/students.component';
-import { StudentsDetailsComponent } from './dashboard/pages/students/components/students-details/students-details.component';
-import { AuthComponent } from './auth/auth/auth.component';
+import { AuthComponent } from './auth/auth.component';
 import { EnrollmentsComponent } from './dashboard/pages/enrollments/enrollments.component';
 import { CoursesDetailsComponent } from './dashboard/pages/courses/components/courses-details/courses-details.component';
 import { UsersComponent } from './dashboard/pages/users/users.component';
 import { UsersDetailsComponent } from './dashboard/pages/users/components/users-details/users-details.component';
+import { TeachersComponent } from './dashboard/pages/teachers/teachers.component';
+import { TeachersDetailsComponent } from './dashboard/pages/teachers/components/teachers-details/teachers-details.component';
+import { RouterModule, Routes } from '@angular/router';
+import { dashboardGuard } from './core/guard/dashboard.guard';
 
 const routes: Routes = [
   {
     path: 'dashboard',
-    component: DashboardComponent,
-    children: [
-      {
-        path: 'home',
-        component: HomeComponent,
-      },
-      {
-        path: 'courses',
-        component: CoursesComponent,
-      },
-      {
-        path: 'courses/:id',
-        component: CoursesDetailsComponent,
-      },
-      {
-        path: 'students',
-        component: StudentsComponent,
-      },
-      {
-        path: 'students/:id',
-        component: StudentsDetailsComponent,
-      },
-      {
-        path: 'enrollments',
-        component: EnrollmentsComponent,
-      },
-      {
-        path: 'users',
-        component: UsersComponent,
-      },
-      {
-        path: 'users/:id',
-        component: UsersDetailsComponent,
-      },
-      {
-        path: '**',
-        redirectTo: 'home',
-      },
-    ],
+    canActivate: [dashboardGuard],
+    loadChildren: () =>
+      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
     path: 'auth',
-    component: AuthComponent,
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
     path: '**',

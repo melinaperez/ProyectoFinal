@@ -35,7 +35,11 @@ export class FormErrorsPipe implements PipeTransform {
       }
 
       if ('pattern' in value) {
-        errorMessages.push('Sólo se aceptan números');
+        let pattern = [value['pattern']['requiredPattern']];
+        if (pattern[0].includes('http'))
+          errorMessages.push('Ingrese una URL válida');
+        else if (pattern[0].includes('^[0-9]+$'))
+          errorMessages.push('Sólo se aceptan números');
       }
 
       if ('minDate' in value) {

@@ -6,4 +6,5 @@ export interface User {
   password: string; //se debe hashear
   dni: string;
   registrationDate: Date;
+  token: string;
 }

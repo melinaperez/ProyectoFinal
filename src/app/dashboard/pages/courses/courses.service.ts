@@ -15,8 +15,9 @@ export class CoursesService {
       startDate: new Date(),
       teacher: {
         id: 1,
-        nombre: 'Ironman',
+        name: 'Ironman',
         image: 'assets/img/logos/Ironman.jpg',
+        skills: [],
       },
       //agregar profesor designado (crear entidad profesor)
     },
@@ -30,8 +31,9 @@ export class CoursesService {
       startDate: new Date(),
       teacher: {
         id: 2,
-        nombre: 'Hulk',
+        name: 'Hulk',
         image: 'assets/img/logos/Hulk.jpg',
+        skills: [],
       },
     },
     {
@@ -44,8 +46,9 @@ export class CoursesService {
       startDate: new Date(),
       teacher: {
         id: 3,
-        nombre: 'Doctor Strange',
+        name: 'Doctor Strange',
         image: 'assets/img/logos/DrStrange.jpg',
+        skills: [],
       },
     },
     {
@@ -58,8 +61,9 @@ export class CoursesService {
       startDate: new Date(),
       teacher: {
         id: 4,
-        nombre: 'Capitán América',
+        name: 'Capitán América',
         image: 'assets/img/logos/CapitanAmerica.jpg',
+        skills: [],
       },
     },
   ];

@@ -31,4 +31,8 @@ export class StudentsService {
   getStudentById$(id: number): Observable<Student | undefined> {
     return of(this.students.find((s) => s.id === id));
   }
+
+  getStudentsLength$(): Observable<number> {
+    return of(this.students.length);
+  }
 }

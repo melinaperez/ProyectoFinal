@@ -1,0 +1,15 @@
+<h1 fontWeight="bolder" appHeadline>Listado de Profesores</h1>
+<button
+  mat-flat-button
+  color="primary"
+  (click)="openTeacherDialog()"
+  class="mat-button"
+>
+  <mat-icon>add</mat-icon> Crear profesor
+</button>
+<app-teachers-list
+  *ngIf="teachers$ | async as teachersObtained"
+  [dataSource]="teachersObtained"
+  (deleteTeacher)="onDeleteTeacher($event)"
+  (editTeacher)="onEditTeacher($event)"
+></app-teachers-list>

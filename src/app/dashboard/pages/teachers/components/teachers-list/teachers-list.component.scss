@@ -1,0 +1,13 @@
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.row-search {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}

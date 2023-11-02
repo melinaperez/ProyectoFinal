@@ -6,6 +6,7 @@ import { StudentsListComponent } from './components/students-list/students-list.
 import { StudentsComponent } from './students.component';
 import { StudentsDetailsComponent } from './components/students-details/students-details.component';
 import { RouterModule } from '@angular/router';
+import { StudentsRoutingModule } from './students-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { RouterModule } from '@angular/router';
     StudentsComponent,
     StudentsDetailsComponent,
   ],
-  imports: [CommonModule, SharedModule, RouterModule],
+  imports: [CommonModule, SharedModule, StudentsRoutingModule],
   exports: [StudentsComponent],
 })
 export class StudentsModule {}

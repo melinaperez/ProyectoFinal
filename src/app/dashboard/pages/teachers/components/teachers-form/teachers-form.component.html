@@ -1,0 +1,53 @@
+<h1 mat-dialog-title>
+  {{ teacher ? "Editar profesor" : "Crear profesor" }}
+</h1>
+<div mat-dialog-content>
+  <form [formGroup]="teacherForm">
+    <div class="row">
+      <div class="col-12">
+        <mat-form-field class="w-100">
+          <mat-label>Nombre</mat-label>
+          <input formControlName="name" matInput />
+          <mat-error>{{
+            teacherForm.get("name")?.errors | formErrors
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-12">
+        <mat-form-field class="w-100">
+          <mat-label>Imagen</mat-label>
+          <input formControlName="image" matInput placeholder="Ingrese URL" />
+          <mat-icon matSuffix>link</mat-icon>
+          <mat-error>{{
+            teacherForm.get("image")?.errors | formErrors
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-12">
+        <mat-form-field class="w-100">
+          <mat-label>Habilidad</mat-label>
+          <mat-select
+            [formControlName]="'skills'"
+            [(ngModel)]="selectedSkills"
+            multiple
+          >
+            <mat-option *ngFor="let skills of selectedSkills" [value]="skills">
+              {{ skills }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-flat-button
+    color="primary"
+    (click)="onSubmit()"
+    [disabled]="teacherForm.invalid"
+  >
+    Guardar
+  </button>
+  <button mat-dialog-close mat-button>Cancelar</button>
+</div>

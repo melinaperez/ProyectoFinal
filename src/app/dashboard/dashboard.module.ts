@@ -11,6 +11,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { RouterModule } from '@angular/router';
 import { CoursesModule } from './pages/courses/courses.module';
 import { UsersModule } from './pages/users/users.module';
+import { TeachersModule } from './pages/teachers/teachers.module';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 
 @NgModule({
   declarations: [DashboardComponent, SidebarComponent, ToolbarComponent],
@@ -18,12 +20,8 @@ import { UsersModule } from './pages/users/users.module';
     CommonModule,
     MatSidenavModule,
     MatToolbarModule,
-    HomeModule,
-    StudentsModule,
-    CoursesModule,
-    UsersModule,
     SharedModule,
-    RouterModule,
+    DashboardRoutingModule,
   ],
   exports: [DashboardComponent],
 })

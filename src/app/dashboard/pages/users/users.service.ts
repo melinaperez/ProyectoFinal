@@ -13,6 +13,7 @@ export class UsersService {
       dni: '471692748',
       registrationDate: new Date('2023-4-20'),
       email: 'dvose0@friendfeed.com',
+      token: 'qwqwqwqwqwqwqw',
     },
     {
       id: 2,
@@ -22,6 +23,7 @@ export class UsersService {
       dni: '677017106',
       registrationDate: new Date('2022-12-4'),
       email: 'msedgmond1@shinystat.com',
+      token: 'ererererererer',
     },
     {
       id: 3,
@@ -31,6 +33,7 @@ export class UsersService {
       dni: '88446114',
       registrationDate: new Date('2022-11-20'),
       email: 'vcaddan2@un.org',
+      token: 'tytytytytytytyty',
     },
     {
       id: 4,
@@ -40,6 +43,7 @@ export class UsersService {
       dni: '799037416',
       registrationDate: new Date('2023-1-22'),
       email: 'bbridgwood3@tmall.com',
+      token: 'jfjdjdjsjsjsjsjs',
     },
     {
       id: 5,
@@ -49,6 +53,7 @@ export class UsersService {
       dni: '569257363',
       registrationDate: new Date('2023-5-18'),
       email: 'hpoate4@privacy.gov.au',
+      token: 'jsjlalalalaaa',
     },
     {
       id: 6,
@@ -58,6 +63,7 @@ export class UsersService {
       dni: '328297834',
       registrationDate: new Date('2023-4-8'),
       email: 'cgibbings5@theglobeandmail.com',
+      token: 'laoaoaoalalao',
     },
     {
       id: 7,
@@ -67,6 +73,7 @@ export class UsersService {
       dni: '885512766',
       registrationDate: new Date('2023-9-21'),
       email: 'mstookes6@ibm.com',
+      token: 'mvmvmvmvmvmvmmv',
     },
     {
       id: 8,
@@ -76,6 +83,7 @@ export class UsersService {
       dni: '506274142',
       registrationDate: new Date('2023-2-4'),
       email: 'ewitcherley7@sciencedaily.com',
+      token: 'alckakcmakad',
     },
     {
       id: 9,
@@ -85,6 +93,7 @@ export class UsersService {
       dni: '963856448',
       registrationDate: new Date('2023-9-18'),
       email: 'bmaha8@nydailynews.com',
+      token: '234msfdmsdfms',
     },
     {
       id: 10,
@@ -94,6 +103,7 @@ export class UsersService {
       dni: '695384445',
       registrationDate: new Date('2023-1-17'),
       email: 'zaldwinckle9@biblegateway.com',
+      token: 'kcmcm5mmamamw2',
     },
     {
       id: 11,
@@ -103,6 +113,7 @@ export class UsersService {
       dni: '680016247',
       registrationDate: new Date('2022-12-18'),
       email: 'jrutta@berkeley.edu',
+      token: 'adasdaqqwahjbnv',
     },
     {
       id: 12,
@@ -112,6 +123,7 @@ export class UsersService {
       dni: '13032126',
       registrationDate: new Date('2023-2-1'),
       email: 'fhyndb@mayoclinic.com',
+      token: 'fskdslsksdksfks',
     },
     {
       id: 13,
@@ -121,6 +133,7 @@ export class UsersService {
       dni: '122937601',
       registrationDate: new Date('2022-12-15'),
       email: 'etassellc@csmonitor.com',
+      token: 'asdasaweasdaa',
     },
     {
       id: 14,
@@ -130,6 +143,7 @@ export class UsersService {
       dni: '391990614',
       registrationDate: new Date('2022-12-31'),
       email: 'kwinterborned@wikimedia.org',
+      token: 'kaksvvmcxmswjwa',
     },
     {
       id: 15,
@@ -139,6 +153,7 @@ export class UsersService {
       dni: '498666109',
       registrationDate: new Date('2022-12-29'),
       email: 'rsabine@biglobe.ne.jp',
+      token: 'asdasdaxcvxcbcv',
     },
   ];
 
@@ -165,5 +180,9 @@ export class UsersService {
 
   getUserById$(id: number): Observable<User | undefined> {
     return of(this.users.find((u) => u.id === id));
+  }
+
+  getusersLength$(): Observable<number> {
+    return of(this.users.length);
   }
 }

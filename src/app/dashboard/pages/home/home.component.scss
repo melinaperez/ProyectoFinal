@@ -1,0 +1,43 @@
+.flex-row {
+  display: flex;
+  flex-direction: row;
+
+  > div {
+    flex: 50%;
+    padding: 10px;
+  }
+  height: 10vh;
+}
+
+.temp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  border-radius: 10px;
+}
+
+.temp {
+  background: lightblue;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.big-text {
+  font-size: 30px;
+}
+
+mat-card {
+  margin: 10px;
+}
+
+.principal {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+}
