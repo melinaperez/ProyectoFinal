@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import {
+  AfterContentChecked,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { StudentsFormComponent } from './components/students-form/students-form.component';
 import { Student } from './models';
@@ -11,13 +16,14 @@ import { StudentsService } from './students.service';
   templateUrl: './students.component.html',
   styleUrls: ['./students.component.scss'],
 })
-export class StudentsComponent {
+export class StudentsComponent implements AfterContentChecked {
   students = new MatTableDataSource<Student>();
   students$: Observable<MatTableDataSource<Student>>;
 
   constructor(
     private studentsService: StudentsService,
-    private matDialog: MatDialog
+    private matDialog: MatDialog,
+    private changeDetector: ChangeDetectorRef
   ) {
     this.students$ = this.studentsService.getStudents$().pipe(
       map((data) => {
@@ -25,6 +31,11 @@ export class StudentsComponent {
         return this.students;
       })
     );
+  }
+
+  //Esto lo agrego porque al eliminar un elemento me estaba dando un error la tabla (ExpressionChangedAfterItHasBeenCheckedError)
+  ngAfterContentChecked(): void {
+    this.changeDetector.detectChanges();
   }
 
   openStudentDialog(): void {
@@ -37,10 +48,9 @@ export class StudentsComponent {
             this.students$ = this.studentsService
               .createStudent$({
                 ...v,
-                id: this.students.data.length + 1,
               })
               .pipe(
-                map((data) => {
+                map((data: Student[]) => {
                   this.students.data = data;
                   return this.students;
                 })
@@ -75,8 +85,10 @@ export class StudentsComponent {
   onDeleteStudent(studentId: number): void {
     if (confirm('¿Está seguro de eliminar al alumno?'))
       this.students$ = this.studentsService.deleteStudent$(studentId).pipe(
-        map((data) => {
-          this.students.data = data;
+        map(() => {
+          this.students.data = this.students.data.filter(
+            (student) => student.id !== studentId
+          );
           return this.students;
         })
       );

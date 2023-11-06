@@ -43,13 +43,14 @@
       </div>
       <div class="row">
         <div class="col-3">
-          <mat-form-field class="w-100" appearance="outline" readonly>
+          <mat-form-field
+            class="w-100"
+            appearance="outline"
+            readonly
+            *ngIf="student"
+          >
             <mat-label>Género</mat-label>
-            <mat-select
-              *ngIf="student"
-              [(value)]="student.gender"
-              class="readonly-block"
-            >
+            <mat-select [(value)]="student.gender">
               <mat-option [value]="1"> Femenino </mat-option>
               <mat-option [value]="2"> Masculino </mat-option>
               <mat-option [value]="3"> X </mat-option>

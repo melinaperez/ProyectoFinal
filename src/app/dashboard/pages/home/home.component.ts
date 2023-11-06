@@ -52,9 +52,9 @@ export class HomeComponent {
       })
     );
 
-    this.studentsLength$ = this.studentsService.getStudentsLength$().pipe(
+    this.studentsLength$ = this.studentsService.getStudents$().pipe(
       map((data) => {
-        this.studentsLength = data;
+        this.studentsLength = data.length;
         return this.studentsLength;
       })
     );

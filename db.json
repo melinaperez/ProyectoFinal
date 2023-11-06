@@ -151,5 +151,287 @@
       "token": "asdasdaxcvxcbcv"
     }
   ],
-  "courses": []
+  "courses": [],
+  "students": [
+    {
+      "id": 1,
+      "name": "Thaddeus",
+      "lastname": "Medhurst Perez",
+      "email": "tmedhurst0@jalbum.net",
+      "gender": 1,
+      "birthdate": "1980-03-08T03:00:00.000Z",
+      "telephone": "561-470-9579",
+      "dni": 58343676
+    },
+    {
+      "id": 2,
+      "name": "Eva",
+      "lastname": "Blitzer",
+      "email": "eblitzer1@addtoany.com",
+      "gender": 1,
+      "birthdate": "1992-11-03T03:00:00.000Z",
+      "telephone": "599-483-3151",
+      "dni": 26752206
+    },
+    {
+      "id": 3,
+      "name": "Emmey",
+      "lastname": "Peppin",
+      "email": "epeppin2@nih.gov",
+      "gender": 1,
+      "birthdate": "1993-11-15T03:00:00.000Z",
+      "telephone": "481-613-4307",
+      "dni": 55527739
+    },
+    {
+      "id": 4,
+      "name": "Zaccaria",
+      "lastname": "Simonard",
+      "email": "zsimonard3@goo.ne.jp",
+      "gender": 2,
+      "birthdate": "1988-08-26T03:00:00.000Z",
+      "telephone": "243-189-7613",
+      "dni": 15537481
+    },
+    {
+      "id": 6,
+      "name": "Lewiss",
+      "lastname": "Scini",
+      "email": "lscini5@elpais.com",
+      "gender": 2,
+      "birthdate": "1984-07-06T03:00:00.000Z",
+      "telephone": "705-516-4207",
+      "dni": 47900828
+    },
+    {
+      "id": 7,
+      "name": "Mace",
+      "lastname": "Marshland",
+      "email": "mmarshland6@spotify.com",
+      "gender": 2,
+      "birthdate": "2000-10-10T03:00:00.000Z",
+      "telephone": "595-854-6119",
+      "dni": 57570463
+    },
+    {
+      "id": 8,
+      "name": "Dagny",
+      "lastname": "L'Amie",
+      "email": "dlamie7@theguardian.com",
+      "gender": 2,
+      "birthdate": "1986-02-23T03:00:00.000Z",
+      "telephone": "960-369-6057",
+      "dni": 27613428
+    },
+    {
+      "id": 9,
+      "name": "Carolus",
+      "lastname": "Maffulli",
+      "email": "cmaffulli8@unc.edu",
+      "gender": 2,
+      "birthdate": "1985-05-21T03:00:00.000Z",
+      "telephone": "955-176-6492",
+      "dni": 12869564
+    },
+    {
+      "id": 10,
+      "name": "Debi",
+      "lastname": "Veevers",
+      "email": "dveevers9@amazon.de",
+      "gender": 1,
+      "birthdate": "1994-06-05T03:00:00.000Z",
+      "telephone": "564-430-9051",
+      "dni": 38519196
+    },
+    {
+      "id": 11,
+      "name": "Merry",
+      "lastname": "Boman",
+      "email": "mbomana@usatoday.com",
+      "gender": 1,
+      "birthdate": "1992-08-07T03:00:00.000Z",
+      "telephone": "327-131-9383",
+      "dni": 63674066
+    },
+    {
+      "id": 12,
+      "name": "Amanda",
+      "lastname": "Proppers",
+      "email": "aproppersb@people.com.cn",
+      "gender": 1,
+      "birthdate": "1992-09-08T03:00:00.000Z",
+      "telephone": "923-890-8690",
+      "dni": 55690986
+    },
+    {
+      "id": 13,
+      "name": "Antoni",
+      "lastname": "Harbisher",
+      "email": "aharbisherc@state.tx.us",
+      "gender": 2,
+      "birthdate": "1980-06-04T03:00:00.000Z",
+      "telephone": "551-857-7080",
+      "dni": 44850799
+    },
+    {
+      "id": 14,
+      "name": "Becka",
+      "lastname": "Wilbor",
+      "email": "bwilbord@weibo.com",
+      "gender": 1,
+      "birthdate": "1983-04-13T03:00:00.000Z",
+      "telephone": "177-331-2727",
+      "dni": 44259148
+    },
+    {
+      "id": 15,
+      "name": "Osbourne",
+      "lastname": "Vokins",
+      "email": "ovokinse@goo.ne.jp",
+      "gender": 2,
+      "birthdate": "1985-04-14T03:00:00.000Z",
+      "telephone": "633-427-5776",
+      "dni": 50533523
+    },
+    {
+      "id": 16,
+      "name": "Trent",
+      "lastname": "Keets",
+      "email": "tkeetsf@msn.com",
+      "gender": 2,
+      "birthdate": "2000-05-14T03:00:00.000Z",
+      "telephone": "217-586-5688",
+      "dni": 11388165
+    },
+    {
+      "id": 17,
+      "name": "Currey",
+      "lastname": "Gossan",
+      "email": "cgossang@marriott.com",
+      "gender": 2,
+      "birthdate": "1999-12-04T03:00:00.000Z",
+      "telephone": "680-539-8188",
+      "dni": 29451104
+    },
+    {
+      "id": 18,
+      "name": "Myrle",
+      "lastname": "Ladley",
+      "email": "mladleyh@gov.uk",
+      "gender": 1,
+      "birthdate": "1989-12-21T03:00:00.000Z",
+      "telephone": "575-208-7911",
+      "dni": 44836645
+    },
+    {
+      "id": 19,
+      "name": "Jacquetta",
+      "lastname": "Grog",
+      "email": "jgrogi@apple.com",
+      "gender": 1,
+      "birthdate": "1980-02-23T03:00:00.000Z",
+      "telephone": "292-539-9427",
+      "dni": 50404271
+    },
+    {
+      "id": 20,
+      "name": "Melina",
+      "lastname": "Perez",
+      "dni": "36767749",
+      "email": "test@mail.com",
+      "birthdate": "2023-11-01T03:00:00.000Z",
+      "gender": 1,
+      "telephone": "121212121"
+    },
+    {
+      "id": 21,
+      "name": "Gonzalo",
+      "lastname": "Piskorz",
+      "dni": "34420127",
+      "email": "perez.melina@outlook.es",
+      "birthdate": "2023-11-01T03:00:00.000Z",
+      "gender": 2,
+      "telephone": "1138254090"
+    },
+    {
+      "id": 22,
+      "name": "leleelelel",
+      "lastname": "lelelelele",
+      "dni": "11111",
+      "email": "perez.melina@outlook.es",
+      "birthdate": "2023-11-01T03:00:00.000Z",
+      "gender": 1,
+      "telephone": "1138254090"
+    },
+    {
+      "id": 23,
+      "name": "lililililili",
+      "lastname": "lilililililiil",
+      "dni": "233232323",
+      "email": "test@test.com",
+      "birthdate": "2023-11-01T03:00:00.000Z",
+      "gender": 1,
+      "telephone": "12121212"
+    },
+    {
+      "id": 24,
+      "name": "lululululu",
+      "lastname": "lulululuul",
+      "dni": "11121212",
+      "email": "test@lalala.com",
+      "birthdate": "2023-11-03T03:00:00.000Z",
+      "gender": 1,
+      "telephone": "1212121"
+    },
+    {
+      "id": 25,
+      "name": "lzlzlzlz",
+      "lastname": "lzlzlzlzlz",
+      "dni": "1111111",
+      "email": "testtesttt@etr.com",
+      "birthdate": "2023-11-02T03:00:00.000Z",
+      "gender": 2,
+      "telephone": "121212"
+    },
+    {
+      "id": 26,
+      "name": "jjj",
+      "lastname": "jjj",
+      "dni": "111",
+      "email": "jjj@mail.co",
+      "birthdate": "2023-11-02T03:00:00.000Z",
+      "gender": 3,
+      "telephone": "212121"
+    },
+    {
+      "id": 27,
+      "name": "mmm",
+      "lastname": "mmm Piskorz corrijo",
+      "dni": "2323232",
+      "email": "perez@mail.cp",
+      "birthdate": "2023-11-03T03:00:00.000Z",
+      "gender": 1,
+      "telephone": "11111"
+    },
+    {
+      "id": 28,
+      "name": "aaa",
+      "lastname": "aaa",
+      "dni": "222",
+      "email": "perez.melina@outlook.es",
+      "birthdate": "2023-11-01T03:00:00.000Z",
+      "gender": 3,
+      "telephone": "+541138254090"
+    },
+    {
+      "id": 29,
+      "name": "wwww",
+      "lastname": "wwww Perez",
+      "dni": "2222",
+      "email": "perez.melina@outlook.es",
+      "birthdate": "2023-11-01T03:00:00.000Z",
+      "gender": 2,
+      "telephone": "+541138254090"
+    }
+  ]
 }

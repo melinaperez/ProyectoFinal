@@ -68,6 +68,8 @@ export class StudentsFormComponent {
     });
 
     if (this.student) {
+      console.log(student);
+
       this.studentForm.patchValue(this.student);
     }
   }
