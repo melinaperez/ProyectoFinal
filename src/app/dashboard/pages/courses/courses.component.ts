@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import {
+  AfterContentChecked,
+  ChangeDetectorRef,
+  Component,
+} from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Course } from './models/course.model';
 import { CoursesService } from './courses.service';
@@ -11,13 +15,14 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.scss'],
 })
-export class CoursesComponent {
+export class CoursesComponent implements AfterContentChecked {
   courses = new MatTableDataSource<Course>();
   courses$: Observable<MatTableDataSource<Course>>;
 
   constructor(
     private coursesService: CoursesService,
-    private matDialog: MatDialog
+    private matDialog: MatDialog,
+    private changeDetector: ChangeDetectorRef
   ) {
     this.courses$ = this.coursesService.getCourses$().pipe(
       map((data) => {
@@ -25,6 +30,10 @@ export class CoursesComponent {
         return this.courses;
       })
     );
+  }
+
+  ngAfterContentChecked(): void {
+    this.changeDetector.detectChanges();
   }
 
   openCourseDialog(): void {
@@ -37,10 +46,9 @@ export class CoursesComponent {
             this.courses$ = this.coursesService
               .createCourse$({
                 ...v,
-                id: this.courses.data.length + 1,
               })
               .pipe(
-                map((data) => {
+                map((data: Course[]) => {
                   this.courses.data = data;
                   return this.courses;
                 })

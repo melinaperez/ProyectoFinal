@@ -5,6 +5,7 @@ import { Observable, map } from 'rxjs';
 import { UsersService } from './users.service';
 import { MatDialog } from '@angular/material/dialog';
 import { UsersFormComponent } from './components/users-form/users-form.component';
+import { genStringRandom } from 'src/app/shared/helpers';
 
 @Component({
   selector: 'app-users',
@@ -39,6 +40,8 @@ export class UsersComponent {
                 ...v,
                 id: this.users.data.length + 1,
                 registrationDate: new Date(),
+                password: '123456',
+                token: genStringRandom(20),
               })
               .pipe(
                 map((data) => {

@@ -36,6 +36,7 @@ export class UsersFormComponent {
       ],
       dni: ['', [Validators.required, Validators.pattern('^[0-9]+')]],
       email: ['', [Validators.required, Validators.email]],
+      rol: ['', [Validators.required]],
       registrationDate: [],
     });
 

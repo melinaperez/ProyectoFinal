@@ -1,1 +1,49 @@
-<p>teachers-details works!</p>
+<div class="row">
+  <mat-tab-group dynamicHeight>
+    <mat-tab class="tab">
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">person</mat-icon>
+        Datos
+      </ng-template>
+      <div class="row-tab">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title>{{ teacher?.name }}</mat-card-title>
+              <mat-card-subtitle>
+                <mat-chip-listbox>
+                  <mat-chip *ngFor="let skill of teacher?.skills">
+                    {{ skill }}
+                  </mat-chip>
+                </mat-chip-listbox></mat-card-subtitle
+              >
+              <img mat-card-md-image src="{{ teacher?.image }}" />
+            </mat-card-title-group>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            <mat-list>
+              <div mat-subheader>Cursos</div>
+              <mat-list-item *ngFor="let course of courses">
+                <mat-icon matListItemIcon>menu_book</mat-icon>
+                <div
+                  class="cursor"
+                  matListItemTitle
+                  (click)="redirect(course.id)"
+                >
+                  {{ course.name }}
+                </div>
+                <div matListItemLine>{{ course.startDate | date }}</div>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+<div class="back">
+  <button mat-mini-fab color="warn" (click)="onBack()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>

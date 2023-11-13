@@ -1,9 +1,9 @@
 <mat-card class="card">
   <mat-card-header>
     <mat-card-title>{{ course?.name }}</mat-card-title>
-    <mat-card-subtitle>Profesor: {{ course?.teacher?.name }}</mat-card-subtitle>
+    <mat-card-subtitle>Profesor: {{ teacher?.name }}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="{{ course?.teacher?.image }}" alt="Teacher" />
+  <img mat-card-image src="{{ teacher?.image }}" alt="Teacher" />
   <mat-card-content>
     <p class="dates">
       Inicio: {{ course?.startDate | date : "dd/MM/yyyy" }} - Finalización:

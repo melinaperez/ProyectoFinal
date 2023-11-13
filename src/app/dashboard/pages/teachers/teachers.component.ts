@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Teacher } from './models/teacher.model';
 import { Observable, map } from 'rxjs';
-import { TeachersService } from './teachers.service';
+import { TeachersService } from './services/teachers.service';
 import { MatDialog } from '@angular/material/dialog';
 import { TeachersFormComponent } from './components/teachers-form/teachers-form.component';
 

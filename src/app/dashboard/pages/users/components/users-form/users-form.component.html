@@ -50,6 +50,16 @@
           }}</mat-error>
         </mat-form-field>
       </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Rol</mat-label>
+          <mat-select [formControlName]="'rol'">
+            <mat-option [value]="1"> Administrador </mat-option>
+            <mat-option [value]="2"> Usuario </mat-option>
+          </mat-select>
+          <mat-error>{{ userForm.get("rol")?.errors | formErrors }}</mat-error>
+        </mat-form-field>
+      </div>
     </div>
   </form>
 </div>

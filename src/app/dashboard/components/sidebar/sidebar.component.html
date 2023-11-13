@@ -1,25 +1,55 @@
 <mat-nav-list>
-  <mat-list-item routerLink="home">
+  <mat-list-item
+    routerLinkActive
+    #usuariosLink="routerLinkActive"
+    [activated]="usuariosLink.isActive"
+    routerLink="home"
+  >
     <mat-icon matListItemIcon>home</mat-icon>
     <a>Home</a>
   </mat-list-item>
-  <mat-list-item routerLink="courses">
+  <mat-list-item
+    routerLinkActive
+    #coursesLink="routerLinkActive"
+    [activated]="coursesLink.isActive"
+    routerLink="courses"
+  >
     <mat-icon matListItemIcon>menu_book</mat-icon>
     <a>Cursos</a>
   </mat-list-item>
-  <mat-list-item routerLink="students" [activated]="true">
+  <mat-list-item
+    routerLinkActive
+    #studentsLink="routerLinkActive"
+    [activated]="studentsLink.isActive"
+    routerLink="students"
+  >
     <mat-icon matListItemIcon>school</mat-icon>
     <a>Alumnos</a>
   </mat-list-item>
-  <mat-list-item routerLink="enrollments">
+  <mat-list-item
+    routerLinkActive
+    #enrollmentsLink="routerLinkActive"
+    [activated]="enrollmentsLink.isActive"
+    routerLink="enrollments"
+  >
     <mat-icon matListItemIcon>assignment_ind</mat-icon>
     <a>Inscripciones</a>
   </mat-list-item>
-  <mat-list-item routerLink="teachers">
+  <mat-list-item
+    routerLinkActive
+    #teachersLink="routerLinkActive"
+    [activated]="teachersLink.isActive"
+    routerLink="teachers"
+  >
     <mat-icon matListItemIcon>group</mat-icon>
     <a>Profesores</a>
   </mat-list-item>
-  <mat-list-item routerLink="users">
+  <mat-list-item
+    routerLinkActive
+    #usersLink="routerLinkActive"
+    [activated]="usersLink.isActive"
+    routerLink="users"
+  >
     <mat-icon matListItemIcon>account_circle</mat-icon>
     <a>Usuarios</a>
   </mat-list-item>

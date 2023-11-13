@@ -1,5 +1,3 @@
-import { Teacher } from '../../teachers/models/teacher.model';
-
 export interface Course {
   id: number;
   name: string;
@@ -7,5 +5,5 @@ export interface Course {
   duration: number;
   startDate: Date;
   endDate: Date;
-  teacher: Teacher;
+  teacher: number;
 }

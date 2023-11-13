@@ -6,17 +6,46 @@
     <div class="row">
       <div class="col-6">
         <mat-form-field class="w-100">
+          <mat-label>Nombre</mat-label>
+          <input formControlName="name" matInput />
+          <mat-error>{{
+            courseForm.get("name")?.errors | formErrors
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field
+          class="w-100"
+          *ngIf="teachers$ | async as teachersObtained"
+        >
+          <mat-label>Profesor</mat-label>
+          <mat-select formControlName="teacher">
+            <mat-option
+              *ngFor="let teacher of teachersObtained"
+              [value]="teacher.id"
+            >
+              {{ teacher.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error>{{
+            courseForm.get("teacher")?.errors | formErrors
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-12">
+        <mat-form-field class="w-100">
           <mat-label>Descripcion</mat-label>
-          <input formControlName="description" matInput />
+          <textarea matInput formControlName="description" rows="5"></textarea>
           <mat-error>{{
             courseForm.get("description")?.errors | formErrors
           }}</mat-error>
         </mat-form-field>
       </div>
-      <div class="col-6">
+      <div class="col-12">
         <mat-form-field class="w-100">
           <mat-label>Duración (horas)</mat-label>
           <input formControlName="duration" matInput />
+          <mat-icon matSuffix>timer</mat-icon>
           <mat-error>{{
             courseForm.get("duration")?.errors | formErrors
           }}</mat-error>

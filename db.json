@@ -6,9 +6,10 @@
       "lastname": "Vose",
       "password": "123456",
       "dni": "471692748",
-      "registrationDate": "2023-4-20",
+      "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "dvose0@friendfeed.com",
-      "token": "qwqwqwqwqwqwqw"
+      "token": "qwqwqwqwqwqwqw",
+      "rol": 1
     },
     {
       "id": 2,
@@ -16,9 +17,10 @@
       "lastname": "Sedgmond",
       "password": "jZ973HG}a,Hmm_",
       "dni": "677017106",
-      "registrationDate": "2022-12-4",
+      "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "msedgmond1@shinystat.com",
-      "token": "ererererererer"
+      "token": "ererererererer",
+      "rol": 1
     },
     {
       "id": 3,
@@ -26,9 +28,10 @@
       "lastname": "Caddan",
       "password": "fT267IqBi0tkL",
       "dni": "88446114",
-      "registrationDate": "2022-11-20",
+      "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "vcaddan2@un.org",
-      "token": "tytytytytytytyty"
+      "token": "tytytytytytytyty",
+      "rol": 1
     },
     {
       "id": 4,
@@ -36,9 +39,10 @@
       "lastname": "Brgwood",
       "password": "kL677Cu,y>dRtV",
       "dni": "799037416",
-      "registrationDate": "2023-1-22",
+      "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "bbrgwood3@tmall.com",
-      "token": "jfjdjdjsjsjsjsjs"
+      "token": "jfjdjdjsjsjsjsjs",
+      "rol": 1
     },
     {
       "id": 5,
@@ -46,9 +50,10 @@
       "lastname": "Poate",
       "password": "vP827muwNgSg{=+",
       "dni": "569257363",
-      "registrationDate": "2023-5-18",
+      "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "hpoate4@privacy.gov.au",
-      "token": "jsjlalalalaaa"
+      "token": "jsjlalalalaaa",
+      "rol": 1
     },
     {
       "id": 6,
@@ -56,9 +61,10 @@
       "lastname": "Gibbings",
       "password": "bL696DN?0",
       "dni": "328297834",
-      "registrationDate": "2023-4-8",
+      "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "cgibbings5@theglobeandmail.com",
-      "token": "laoaoaoalalao"
+      "token": "laoaoaoalalao",
+      "rol": 1
     },
     {
       "id": 7,
@@ -66,9 +72,10 @@
       "lastname": "Stookes",
       "password": "fV396#|IR7",
       "dni": "885512766",
-      "registrationDate": "2023-9-21",
+      "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "mstookes6@ibm.com",
-      "token": "mvmvmvmvmvmvmmv"
+      "token": "mvmvmvmvmvmvmmv",
+      "rol": 1
     },
     {
       "id": 8,
@@ -76,9 +83,10 @@
       "lastname": "Witcherley",
       "password": "yE536T$jkmo<D<J",
       "dni": "506274142",
-      "registrationDate": "2023-2-4",
+      "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "ewitcherley7@sciencedaily.com",
-      "token": "alckakcmakad"
+      "token": "alckakcmakad",
+      "rol": 2
     },
     {
       "id": 9,
@@ -86,9 +94,10 @@
       "lastname": "Maha",
       "password": "gU3946H9E}",
       "dni": "963856448",
-      "registrationDate": "2023-9-18",
+      "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "bmaha8@nydailynews.com",
-      "token": "234msfdmsdfms"
+      "token": "234msfdmsdfms",
+      "rol": 2
     },
     {
       "id": 10,
@@ -96,9 +105,10 @@
       "lastname": "Aldwinckle",
       "password": "oF341,sSwp$IC#%3",
       "dni": "695384445",
-      "registrationDate": "2023-1-17",
+      "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "zaldwinckle9@biblegateway.com",
-      "token": "kcmcm5mmamamw2"
+      "token": "kcmcm5mmamamw2",
+      "rol": 2
     },
     {
       "id": 11,
@@ -106,9 +116,10 @@
       "lastname": "Rutt",
       "password": "zX938#K}",
       "dni": "680016247",
-      "registrationDate": "2022-12-18",
+      "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "jrutta@berkeley.edu",
-      "token": "adasdaqqwahjbnv"
+      "token": "adasdaqqwahjbnv",
+      "rol": 2
     },
     {
       "id": 12,
@@ -116,9 +127,10 @@
       "lastname": "Hynd",
       "password": "zK887bj#",
       "dni": "13032126",
-      "registrationDate": "2023-2-1",
+      "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "fhyndb@mayoclinic.com",
-      "token": "fskdslsksdksfks"
+      "token": "fskdslsksdksfks",
+      "rol": 2
     },
     {
       "id": 13,
@@ -126,9 +138,10 @@
       "lastname": "Tassell",
       "password": "kM9922)rw9xM`(",
       "dni": "122937601",
-      "registrationDate": "2022-12-15",
+      "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "etassellc@csmonitor.com",
-      "token": "asdasaweasdaa"
+      "token": "asdasaweasdaa",
+      "rol": 2
     },
     {
       "id": 14,
@@ -136,9 +149,10 @@
       "lastname": "Winterborne",
       "password": "uD840,`4zTlH7",
       "dni": "391990614",
-      "registrationDate": "2022-12-31",
+      "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "kwinterborned@wikimedia.org",
-      "token": "kaksvvmcxmswjwa"
+      "token": "kaksvvmcxmswjwa",
+      "rol": 2
     },
     {
       "id": 15,
@@ -146,12 +160,68 @@
       "lastname": "Sabin",
       "password": "xB432BD>2$$Uq<x",
       "dni": "498666109",
-      "registrationDate": "2022-12-29",
+      "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "rsabine@biglobe.ne.jp",
-      "token": "asdasdaxcvxcbcv"
+      "token": "asdasdaxcvxcbcv",
+      "rol": 2
+    },
+    {
+      "id": 16,
+      "name": "Melina Yanel",
+      "lastname": "Perez",
+      "dni": "36767749",
+      "email": "perez.melina@outlook.es",
+      "registrationDate": "2023-11-13T15:49:51.611Z",
+      "rol": 2
     }
   ],
-  "courses": [],
+  "courses": [
+    {
+      "id": 1,
+      "name": "Flying course",
+      "description": "Tony Stark, también conocido como Iron Man, es un genio multimillonario con la habilidad de volar gracias a su avanzada armadura tecnológica. En este curso, Iron Man te proporcionará una réplica de su armadura y te guiará en su uso en su laboratorio. Te explicará cómo despegar y volar de manera segura, utilizando propulsores en manos y pies. Te equipará con un casco de realidad aumentada y te supervisará mientras ganas confianza en el aire. La lección culminará con un emocionante vuelo juntos, mostrándote acrobacias aéreas.",
+      "duration": 80,
+      "startDate": "2023-11-03T03:00:00.000Z",
+      "endDate": "2024-02-03T03:00:00.000Z",
+      "teacher": 1
+    },
+    {
+      "id": 2,
+      "name": "Strength course",
+      "description": "El Dr. Bruce Banner, conocido como Hulk cuando se enfurece, es uno de los seres más fuertes en el universo Marvel. En este curso, Hulk te llevará a un lugar seguro y comenzará con ejercicios de calentamiento. Luego, te enseñará técnicas de levantamiento de pesas extremadamente pesadas y cómo canalizar la furia para aumentar la fuerza. También aprenderás sobre resistencia y responsabilidad en el uso de la misma.",
+      "duration": 70,
+      "startDate": "2024-03-03T03:00:00.000Z",
+      "endDate": "2024-06-03T03:00:00.000Z",
+      "teacher": 2
+    },
+    {
+      "id": 3,
+      "name": "Magic course",
+      "description": "El Doctor Stephen Strange, conocido como Doctor Strange y Maestro de las Artes Místicas, es un experto en el uso de la magia en el universo Marvel. En este curso, Strange te enseñará los conceptos fundamentales de las artes místicas, incluyendo hechizos básicos, meditación y concentración, viaje astral, manipulación del tiempo y defensa contra amenazas místicas. También enfatizará la ética y responsabilidad en el uso de la magia. El curso culminará en un desafío mágico para demostrar tus habilidades.",
+      "duration": 80,
+      "startDate": "2024-04-03T03:00:00.000Z",
+      "endDate": "2024-07-03T03:00:00.000Z",
+      "teacher": 3
+    },
+    {
+      "id": 4,
+      "name": "Fighting course",
+      "description": "El Capitán América, Steve Rogers, es un super soldado y experto en combate cuerpo a cuerpo. En este curso, Rogers te enseñará fundamentos de combate, incluyendo técnicas de ataque y defensa. Llevará a cabo un intenso entrenamiento físico para mejorar la fuerza y la resistencia. También instruirá en técnicas de defensa personal, artes marciales y el uso de equipos. El curso destacará la ética y la responsabilidad en el combate, culminando en simulaciones de combate para poner en práctica las habilidades aprendidas.",
+      "duration": 100,
+      "startDate": "2024-11-03T03:00:00.000Z",
+      "endDate": "2024-12-03T03:00:00.000Z",
+      "teacher": 4
+    },
+    {
+      "id": 5,
+      "name": "Pruebaaaaaa",
+      "description": "Pruebaaaaaaa",
+      "duration": "80",
+      "startDate": "2023-11-02T03:00:00.000Z",
+      "endDate": "2023-11-30T03:00:00.000Z",
+      "teacher": 1
+    }
+  ],
   "students": [
     {
       "id": 1,
@@ -432,6 +502,55 @@
       "birthdate": "2023-11-01T03:00:00.000Z",
       "gender": 2,
       "telephone": "+541138254090"
+    },
+    {
+      "id": 30,
+      "name": "Melina",
+      "lastname": "Perez",
+      "dni": "333333333",
+      "email": "perez.melina@outlook.es",
+      "birthdate": "2023-11-01T03:00:00.000Z",
+      "gender": 1,
+      "telephone": "1138254090"
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "name": "Ironman",
+      "image": "assets/img/logos/Ironman.jpg",
+      "skills": ["Fuerza"]
+    },
+    {
+      "id": 2,
+      "name": "Hulk",
+      "image": "assets/img/logos/Hulk.jpg",
+      "skills": ["Fuerza", "Pelea"]
+    },
+    {
+      "id": 3,
+      "name": "Doctor Strange",
+      "image": "assets/img/logos/DrStrange.jpg",
+      "skills": ["Magia", "Pelea"]
+    },
+    {
+      "id": 4,
+      "name": "Capitán América",
+      "image": "assets/img/logos/CapitanAmerica.jpg",
+      "skills": ["Pelea", "Fuerza"]
+    },
+    {
+      "id": 5,
+      "name": "Bruja Escarlata",
+      "image": "https://ae01.alicdn.com/kf/U3fbaa9c547aa40ddbb300bf809898e47O/Calcoman-as-de-vinilo-con-logotipo-de-bruja-escarlata-para-ni-as-decoraci-n-de-botella.jpg",
+      "skills": ["Telepatia", "Magia"]
+    }
+  ],
+  "enrollments": [
+    {
+      "idAlumno": 1,
+      "idCursor": 1,
+      "inscriptionDate": "2023-11-13T03:00:00.000Z"
     }
   ]
 }

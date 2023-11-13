@@ -6,12 +6,12 @@ export interface Teacher {
 }
 
 export enum Skill {
-  FUERZA,
-  INVISIBILIDAD,
-  VUELO,
-  PELEA,
-  TELEPATIA,
-  REGENERACION,
-  VELOCIDAD,
-  MAGIA,
+  FUERZA = 'Fuerza',
+  INVISIBILIDAD = 'Invisibilidad',
+  VUELO = 'Vuelo',
+  PELEA = 'Pelea',
+  TELEPATIA = 'Telepatia',
+  REGENERACION = 'Regeneracion',
+  VELOCIDAD = 'Velocidad',
+  MAGIA = 'Magia',
 }

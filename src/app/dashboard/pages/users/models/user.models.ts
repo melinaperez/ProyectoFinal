@@ -7,4 +7,5 @@ export interface User {
   dni: string;
   registrationDate: Date;
   token: string;
+  rol: number;
 }

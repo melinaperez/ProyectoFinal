@@ -38,7 +38,6 @@ export class CoursesListComponent {
     'duration',
     'startDate',
     'endDate',
-    'teacher',
     'actions',
   ];
 

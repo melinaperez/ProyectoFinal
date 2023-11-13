@@ -45,9 +45,9 @@ export class HomeComponent {
       },
     ];
 
-    this.usersLength$ = this.usersService.getusersLength$().pipe(
+    this.usersLength$ = this.usersService.getUsers$().pipe(
       map((data) => {
-        this.usersLength = data;
+        this.usersLength = data.length;
         return this.usersLength;
       })
     );
