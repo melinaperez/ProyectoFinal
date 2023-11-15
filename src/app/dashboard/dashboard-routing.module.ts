@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
+import { adminGuard } from '../core/guard/adminRole.guard';
 
 @NgModule({
   imports: [
@@ -45,8 +46,16 @@ import { HomeComponent } from './pages/home/home.component';
           },
           {
             path: 'users',
+            canActivate: [adminGuard],
             loadChildren: () =>
               import('./pages/users/users.module').then((m) => m.UsersModule),
+          },
+          {
+            path: 'access-denied',
+            loadChildren: () =>
+              import('./pages/access-denied/access-denied.module').then(
+                (m) => m.AccessDeniedModule
+              ),
           },
           {
             path: '**',

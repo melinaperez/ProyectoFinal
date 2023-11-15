@@ -7,5 +7,10 @@ export interface User {
   dni: string;
   registrationDate: Date;
   token: string;
-  rol: number;
+  role: Role;
+}
+
+export enum Role {
+  ADMIN = 'ADMIN',
+  USER = 'USER',
 }

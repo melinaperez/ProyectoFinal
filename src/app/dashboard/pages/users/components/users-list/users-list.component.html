@@ -47,10 +47,20 @@
         <button [routerLink]="user.id" mat-icon-button color="accent">
           <mat-icon>visibility</mat-icon>
         </button>
-        <button mat-icon-button color="primary" (click)="editUser.emit(user)">
+        <button
+          mat-icon-button
+          color="primary"
+          *ngIf="userRole === 'ADMIN'"
+          (click)="editUser.emit(user)"
+        >
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button color="warn" (click)="deleteUser.emit(user.id)">
+        <button
+          mat-icon-button
+          color="warn"
+          *ngIf="userRole === 'ADMIN'"
+          (click)="deleteUser.emit(user.id)"
+        >
           <mat-icon>delete</mat-icon>
         </button>
       </td>

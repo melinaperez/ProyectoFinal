@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UsersService } from '../users/users.service';
+import { UsersService } from '../users/services/users.service';
 import { Observable, map } from 'rxjs';
 import { StudentsService } from '../students/students.service';
 import { Router } from '@angular/router';
@@ -74,8 +74,6 @@ export class HomeComponent {
   }
 
   get(get: string) {
-    console.log('clic');
-
     this.router.navigate([`dashboard/${get}`]);
   }
 }

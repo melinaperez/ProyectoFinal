@@ -6,16 +6,26 @@ import { environment } from 'src/environments/environment.local';
 import { Login } from '../models/login';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { Store } from '@ngrx/store';
+import { AuthActions } from 'src/app/store/auth/auth.actions';
+import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private _authUser$ = new BehaviorSubject<User | null>(null);
+  public authUser$ = this.store.select(selectAuthUser);
 
-  public authUser$ = this._authUser$.asObservable();
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router,
+    private store: Store
+  ) {}
 
-  constructor(private httpClient: HttpClient, private router: Router) {}
+  private handleAuthUser(authUser: User): void {
+    this.store.dispatch(AuthActions.setAuthUser({ data: authUser }));
+    localStorage.setItem('token', authUser.token);
+  }
 
   login(payload: Login): void {
     this.httpClient
@@ -32,17 +42,14 @@ export class AuthService {
             });
           } else {
             const authUser = response[0];
-            this._authUser$.next(authUser);
-            localStorage.setItem('token', authUser.token);
+
+            this.handleAuthUser(authUser);
+
             this.router.navigate(['/dashboard/home']);
           }
         },
         error: (err) => {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Error de conexión',
-          });
+          alert('Error de conexion');
         },
       });
   }
@@ -58,8 +65,7 @@ export class AuthService {
             return false;
           } else {
             const authUser = users[0];
-            this._authUser$.next(authUser);
-            localStorage.setItem('token', authUser.token);
+            this.handleAuthUser(authUser);
             return true;
           }
         })
@@ -67,7 +73,7 @@ export class AuthService {
   }
 
   logout(): void {
-    this._authUser$.next(null);
+    this.store.dispatch(AuthActions.resetState());
     localStorage.removeItem('token');
     this.router.navigate(['/auth/login']);
   }

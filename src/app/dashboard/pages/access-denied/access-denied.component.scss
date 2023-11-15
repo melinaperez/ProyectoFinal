@@ -1,0 +1,15 @@
+.card {
+  max-width: 400px;
+  margin: 50px auto;
+  text-align: center;
+  align-items: center;
+}
+
+mat-card-actions {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+mat-card-header {
+  justify-content: center;
+}

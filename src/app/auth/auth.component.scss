@@ -3,3 +3,15 @@ main {
   width: 100%;
   background-color: indigo;
 }
+
+.background-image {
+  background-image: url("https://ahaslides.com/wp-content/uploads/2021/10/Marvel-Template-Thumbnail-1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+mat-card {
+  border-radius: 10px;
+  background-color: #fcf7ef;
+}

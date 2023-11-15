@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { User } from './models/user.models';
+import { Role, User } from './models/user.models';
 import { Observable, map } from 'rxjs';
-import { UsersService } from './users.service';
+import { UsersService } from './services/users.service';
 import { MatDialog } from '@angular/material/dialog';
 import { UsersFormComponent } from './components/users-form/users-form.component';
 import { genStringRandom } from 'src/app/shared/helpers';
+import { Store } from '@ngrx/store';
+import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
 
 @Component({
   selector: 'app-users',
@@ -15,11 +17,18 @@ import { genStringRandom } from 'src/app/shared/helpers';
 export class UsersComponent {
   users = new MatTableDataSource<User>();
   users$: Observable<MatTableDataSource<User>>;
+  userRole$: Observable<Role | undefined>;
+  userRoleDefault: Role = Role.USER;
 
   constructor(
     private usersService: UsersService,
-    private matDialog: MatDialog
+    private matDialog: MatDialog,
+    private store: Store
   ) {
+    this.userRole$ = this.store
+      .select(selectAuthUser)
+      .pipe(map((u) => u?.role));
+
     this.users$ = this.usersService.getUsers$().pipe(
       map((data) => {
         this.users.data = data;

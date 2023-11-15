@@ -1,1 +1,23 @@
-<p>enrollments works!</p>
+<!-- <h1 fontWeight="bolder" appHeadline>Listado de Inscripciones</h1>
+<button
+  mat-flat-button
+  color="primary"
+  (click)="openEnrollmentDialog()"
+  class="mat-button"
+>
+  <mat-icon>add</mat-icon> Crear inscripción
+</button>
+<app-enrollments-list
+  *ngIf="enrollments$ | async as enrollmentsObtained"
+  [dataSource]="enrollmentsObtained"
+  (deleteEnrollment)="onDeleteEnrollment($event)"
+  (editEnrollment)="onEditEnrollment($event)"
+></app-enrollments-list> -->
+<h1 fontWeight="bolder" appHeadline>Listado de Inscripciones</h1>
+<button mat-flat-button color="primary" class="mat-button">
+  <mat-icon>add</mat-icon> Crear inscripción
+</button>
+<app-enrollments-list
+  *ngIf="enrollments$ | async as enrollmentsObtained"
+  [dataSource]="enrollmentsObtained"
+></app-enrollments-list>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from './models/user.models';
+import { User } from '../models/user.models';
 import { Observable, concatMap, of } from 'rxjs';
 import { environment } from 'src/environments/environment.local';
 import { HttpClient } from '@angular/common/http';

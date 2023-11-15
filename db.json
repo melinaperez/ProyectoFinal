@@ -4,12 +4,12 @@
       "id": 1,
       "name": "Damara",
       "lastname": "Vose",
-      "password": "123456",
       "dni": "471692748",
-      "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "dvose0@friendfeed.com",
-      "token": "qwqwqwqwqwqwqw",
-      "rol": 1
+      "role": "ADMIN",
+      "registrationDate": "2023-11-13T03:00:00.000Z",
+      "password": "123456",
+      "token": "wjhsfjhsdkfhskdf"
     },
     {
       "id": 2,
@@ -20,7 +20,7 @@
       "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "msedgmond1@shinystat.com",
       "token": "ererererererer",
-      "rol": 1
+      "role": "ADMIN"
     },
     {
       "id": 3,
@@ -31,7 +31,7 @@
       "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "vcaddan2@un.org",
       "token": "tytytytytytytyty",
-      "rol": 1
+      "role": "ADMIN"
     },
     {
       "id": 4,
@@ -42,7 +42,7 @@
       "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "bbrgwood3@tmall.com",
       "token": "jfjdjdjsjsjsjsjs",
-      "rol": 1
+      "role": "ADMIN"
     },
     {
       "id": 5,
@@ -53,7 +53,7 @@
       "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "hpoate4@privacy.gov.au",
       "token": "jsjlalalalaaa",
-      "rol": 1
+      "role": "ADMIN"
     },
     {
       "id": 6,
@@ -64,7 +64,7 @@
       "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "cgibbings5@theglobeandmail.com",
       "token": "laoaoaoalalao",
-      "rol": 1
+      "role": "ADMIN"
     },
     {
       "id": 7,
@@ -75,7 +75,7 @@
       "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "mstookes6@ibm.com",
       "token": "mvmvmvmvmvmvmmv",
-      "rol": 1
+      "role": "ADMIN"
     },
     {
       "id": 8,
@@ -86,7 +86,7 @@
       "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "ewitcherley7@sciencedaily.com",
       "token": "alckakcmakad",
-      "rol": 2
+      "role": "USER"
     },
     {
       "id": 9,
@@ -97,7 +97,7 @@
       "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "bmaha8@nydailynews.com",
       "token": "234msfdmsdfms",
-      "rol": 2
+      "role": "USER"
     },
     {
       "id": 10,
@@ -108,7 +108,7 @@
       "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "zaldwinckle9@biblegateway.com",
       "token": "kcmcm5mmamamw2",
-      "rol": 2
+      "role": "USER"
     },
     {
       "id": 11,
@@ -119,7 +119,7 @@
       "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "jrutta@berkeley.edu",
       "token": "adasdaqqwahjbnv",
-      "rol": 2
+      "role": "USER"
     },
     {
       "id": 12,
@@ -130,7 +130,7 @@
       "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "fhyndb@mayoclinic.com",
       "token": "fskdslsksdksfks",
-      "rol": 2
+      "role": "USER"
     },
     {
       "id": 13,
@@ -141,7 +141,7 @@
       "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "etassellc@csmonitor.com",
       "token": "asdasaweasdaa",
-      "rol": 2
+      "role": "USER"
     },
     {
       "id": 14,
@@ -152,7 +152,7 @@
       "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "kwinterborned@wikimedia.org",
       "token": "kaksvvmcxmswjwa",
-      "rol": 2
+      "role": "USER"
     },
     {
       "id": 15,
@@ -163,16 +163,29 @@
       "registrationDate": "2023-11-13T03:00:00.000Z",
       "email": "rsabine@biglobe.ne.jp",
       "token": "asdasdaxcvxcbcv",
-      "rol": 2
+      "role": "USER"
     },
     {
       "id": 16,
-      "name": "Melina Yanel",
+      "name": "Melina",
       "lastname": "Perez",
       "dni": "36767749",
       "email": "perez.melina@outlook.es",
-      "registrationDate": "2023-11-13T15:49:51.611Z",
-      "rol": 2
+      "role": "USER",
+      "registrationDate": "2023-11-14T14:06:51.177Z",
+      "password": "123456",
+      "token": "CsAKWDMzBkMmfTfCeNa0"
+    },
+    {
+      "id": 17,
+      "name": "Gonzalo",
+      "lastname": "Piskorz",
+      "dni": "34420111",
+      "email": "gonzalo@mail.com",
+      "role": "ADMIN",
+      "registrationDate": "2023-11-14T18:22:27.376Z",
+      "password": "123456",
+      "token": "akF1UO0a9Ze2M7d0cGeN"
     }
   ],
   "courses": [
@@ -519,37 +532,52 @@
       "id": 1,
       "name": "Ironman",
       "image": "assets/img/logos/Ironman.jpg",
-      "skills": ["Fuerza"]
+      "skills": [
+        "Fuerza"
+      ]
     },
     {
       "id": 2,
       "name": "Hulk",
       "image": "assets/img/logos/Hulk.jpg",
-      "skills": ["Fuerza", "Pelea"]
+      "skills": [
+        "Fuerza",
+        "Pelea"
+      ]
     },
     {
       "id": 3,
       "name": "Doctor Strange",
       "image": "assets/img/logos/DrStrange.jpg",
-      "skills": ["Magia", "Pelea"]
+      "skills": [
+        "Magia",
+        "Pelea"
+      ]
     },
     {
       "id": 4,
       "name": "Capitán América",
       "image": "assets/img/logos/CapitanAmerica.jpg",
-      "skills": ["Pelea", "Fuerza"]
+      "skills": [
+        "Pelea",
+        "Fuerza"
+      ]
     },
     {
       "id": 5,
       "name": "Bruja Escarlata",
       "image": "https://ae01.alicdn.com/kf/U3fbaa9c547aa40ddbb300bf809898e47O/Calcoman-as-de-vinilo-con-logotipo-de-bruja-escarlata-para-ni-as-decoraci-n-de-botella.jpg",
-      "skills": ["Telepatia", "Magia"]
+      "skills": [
+        "Telepatia",
+        "Magia"
+      ]
     }
   ],
   "enrollments": [
     {
-      "idAlumno": 1,
-      "idCursor": 1,
+      "id": 1,
+      "courseId": 1,
+      "studentId": 1,
       "inscriptionDate": "2023-11-13T03:00:00.000Z"
     }
   ]

@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { User } from '../../models/user.models';
+import { RolesService } from '../../services/roles.service';
 
 @Component({
   selector: 'app-users-form',
@@ -10,12 +11,16 @@ import { User } from '../../models/user.models';
 })
 export class UsersFormComponent {
   userForm: FormGroup;
+  roles: string[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
     private matDialogRef: MatDialogRef<UsersFormComponent>,
+    private rolesService: RolesService,
     @Inject(MAT_DIALOG_DATA) public user?: User
   ) {
+    this.roles = this.rolesService.obtenerTiposDatos();
+
     this.userForm = this.formBuilder.group({
       id: [],
       name: [
@@ -36,8 +41,10 @@ export class UsersFormComponent {
       ],
       dni: ['', [Validators.required, Validators.pattern('^[0-9]+')]],
       email: ['', [Validators.required, Validators.email]],
-      rol: ['', [Validators.required]],
+      role: ['', [Validators.required]],
       registrationDate: [],
+      password: [],
+      token: [],
     });
 
     if (this.user) {

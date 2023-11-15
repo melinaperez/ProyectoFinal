@@ -9,7 +9,10 @@ import {
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { User } from '../../models/user.models';
+import { Role, User } from '../../models/user.models';
+import { Observable, map } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
 
 @Component({
   selector: 'app-users-list',
@@ -28,6 +31,9 @@ export class UsersListComponent implements AfterViewInit {
 
   @Output()
   editUser = new EventEmitter<User>();
+
+  @Input()
+  userRole: Role = Role.USER;
 
   constructor() {}
 

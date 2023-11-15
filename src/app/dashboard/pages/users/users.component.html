@@ -3,13 +3,15 @@
   mat-flat-button
   color="primary"
   class="mat-button"
+  *ngIf="(userRole$ | async) === 'ADMIN'"
   (click)="openUserDialog()"
 >
-  <mat-icon>add</mat-icon> Crear alumno
+  <mat-icon>add</mat-icon> Crear Usuario
 </button>
 <app-users-list
   *ngIf="users$ | async as usersObtained"
   [dataSource]="usersObtained"
   (deleteUser)="onDeleteUser($event)"
   (editUser)="onEditUser($event)"
+  [userRole]="(userRole$ | async) || userRoleDefault"
 ></app-users-list>

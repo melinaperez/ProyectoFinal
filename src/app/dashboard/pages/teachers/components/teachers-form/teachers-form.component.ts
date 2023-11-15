@@ -21,6 +21,7 @@ export class TeachersFormComponent {
     @Inject(MAT_DIALOG_DATA) public teacher?: Teacher
   ) {
     this.skills = this.skillsService.obtenerTiposDatos();
+
     this.teacherForm = this.formBuilder.group({
       id: [],
       name: [
