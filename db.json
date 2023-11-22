@@ -575,10 +575,28 @@
   ],
   "enrollments": [
     {
-      "id": 1,
       "courseId": 1,
+      "studentId": 3,
+      "inscriptionDate": "2023-11-22T18:01:28.898Z",
+      "id": 1
+    },
+    {
+      "courseId": 2,
+      "studentId": 2,
+      "inscriptionDate": "2023-11-22T18:01:43.649Z",
+      "id": 2
+    },
+    {
+      "courseId": 3,
+      "studentId": 3,
+      "inscriptionDate": "2023-11-22T18:59:38.206Z",
+      "id": 3
+    },
+    {
+      "courseId": 4,
       "studentId": 1,
-      "inscriptionDate": "2023-11-13T03:00:00.000Z"
+      "inscriptionDate": "2023-11-22T19:48:04.842Z",
+      "id": 4
     }
   ]
 }

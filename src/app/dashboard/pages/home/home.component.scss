@@ -1,3 +1,23 @@
+mat-card {
+  margin: 10px;
+  background-color: #3b3b3b;
+}
+
+mat-card-title {
+  color: white;
+}
+
+mat-card-actions {
+  align-items: center;
+  justify-content: right;
+  margin-right: 10px;
+}
+
+.custom-button {
+  background-color: #5c5c5c;
+  color: white;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -21,7 +41,7 @@ div {
 }
 
 .temp {
-  background-color: #fcf7ef;
+  background-color: #5c5c5c;
   color: black;
   display: flex;
   flex-direction: column;
@@ -31,11 +51,7 @@ div {
 
 .big-text {
   font-size: 30px;
-}
-
-mat-card {
-  margin: 10px;
-  background-color: #f9ecd9;
+  color: white;
 }
 
 .principal {

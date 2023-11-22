@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -15,6 +16,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FullnamePipe } from './pipes/fullname.pipe';
 import { FormErrorsPipe } from './pipes/form-errors.pipe';
 import { HeadlineDirective } from './directives/headline.directive';
@@ -29,6 +31,7 @@ import { HeadlineDirective } from './directives/headline.directive';
     MatFormFieldModule,
     MatListModule,
     MatSelectModule,
+    MatOptionModule,
     MatDialogModule,
     MatTableModule,
     MatPaginatorModule,
@@ -37,6 +40,7 @@ import { HeadlineDirective } from './directives/headline.directive';
     MatCardModule,
     MatTabsModule,
     MatChipsModule,
+    MatAutocompleteModule,
     ReactiveFormsModule,
     FullnamePipe,
     FormErrorsPipe,

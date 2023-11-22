@@ -40,27 +40,16 @@ export class EnrollmentsComponent implements AfterContentChecked {
     this.changeDetector.detectChanges();
   }
 
-  // openEnrollmentDialog(): void {
-  //   this.matDialog
-  //     .open(EnrollmentsFormComponent)
-  //     .afterClosed()
-  //     .subscribe({
-  //       next: (v) => {
-  //         if (!!v) {
-  //           this.enrollments$ = this.enrollmentsService
-  //             .createEnrollment$({
-  //               ...v,
-  //             })
-  //             .pipe(
-  //               map((data: Enrollment[]) => {
-  //                 this.enrollments.data = data;
-  //                 return this.enrollments;
-  //               })
-  //             );
-  //         }
-  //       },
-  //     });
-  // }
+  addEnrollment(): void {
+    this.matDialog.open(EnrollmentsFormComponent);
+  }
+
+  deleteEnrollment(enrollmentId: number): void {
+    if (confirm('¿Está seguro de eliminar el curso?'))
+      this.store.dispatch(
+        EnrollmentActions.deleteEnrollment({ idEnrollment: enrollmentId })
+      );
+  }
 
   // onEditEnrollment(enrollment: Enrollment): void {
   //   this.matDialog
@@ -82,19 +71,5 @@ export class EnrollmentsComponent implements AfterContentChecked {
   //         }
   //       },
   //     });
-  // }
-
-  // onDeleteEnrollment(enrollmentId: number): void {
-  //   if (confirm('¿Está seguro de eliminar al alumno?'))
-  //     this.enrollments$ = this.enrollmentsService
-  //       .deleteEnrollment$(enrollmentId)
-  //       .pipe(
-  //         map(() => {
-  //           this.enrollments.data = this.enrollments.data.filter(
-  //             (enrollment) => enrollment.id !== enrollmentId
-  //           );
-  //           return this.enrollments;
-  //         })
-  //       );
   // }
 }

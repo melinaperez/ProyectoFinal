@@ -84,6 +84,33 @@
         </div>
       </div>
     </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">menu_book</mat-icon>
+        Cursos
+      </ng-template>
+      <div class="row-tab">
+        <ng-container
+          *ngIf="
+            (courses$ | async) === undefined ||
+              (courses$ | async) === null ||
+              (courses$ | async)?.length === 0;
+            else courses
+          "
+        >
+          <h2>No está inscripto a ningún curso</h2>
+        </ng-container>
+        <ng-template #courses>
+          <mat-list>
+            <mat-card *ngFor="let item of courses$ | async">
+              <mat-list-item>
+                <span matListItemTitle>{{ item.course.name }}</span>
+              </mat-list-item>
+            </mat-card>
+          </mat-list>
+        </ng-template>
+      </div>
+    </mat-tab>
   </mat-tab-group>
 </div>
 <div class="back">

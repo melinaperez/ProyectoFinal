@@ -29,3 +29,10 @@ mat-form-field:has(input[readonly]) {
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
+
+mat-card {
+  max-width: 200px;
+  max-height: 200px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}

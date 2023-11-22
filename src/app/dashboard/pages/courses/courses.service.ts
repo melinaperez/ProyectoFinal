@@ -41,4 +41,10 @@ export class CoursesService {
       map((courses) => courses.filter((course) => course.teacher === id))
     );
   }
+
+  getCoursesByStudentId$(id: number): Observable<any> {
+    return this.httpClient.get<any>(
+      environment.baseUrl + `/enrollments?studentId=${id}&_expand=course`
+    );
+  }
 }

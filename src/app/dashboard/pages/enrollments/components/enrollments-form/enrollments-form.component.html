@@ -1,1 +1,71 @@
-<p>enrollments-form works!</p>
+<h1 mat-dialog-title>Crear inscripcion</h1>
+
+<div mat-dialog-content>
+  <ng-container *ngIf="isLoading$ | async; else formulario">
+    Cargando...
+  </ng-container>
+  <ng-template #formulario>
+    <form class="row" [formGroup]="enrollmentForm">
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Curso</mat-label>
+          <input
+            type="text"
+            placeholder="Seleccione un curso"
+            aria-label="Curso"
+            matInput
+            formControlName="courseId"
+            [matAutocomplete]="autoCourses"
+          />
+          <mat-autocomplete
+            autoActiveFirstOption
+            #autoCourses="matAutocomplete"
+            [displayWith]="displayCourseFn"
+          >
+            <mat-option
+              *ngFor="let option of filteredCourses | async"
+              [value]="{ id: option.id, name: option.name }"
+            >
+              {{ option.name }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Alumno</mat-label>
+          <input
+            type="text"
+            placeholder="Seleccione un alumno"
+            aria-label="Alumno"
+            matInput
+            formControlName="studentId"
+            [matAutocomplete]="autoStudents"
+          />
+          <mat-autocomplete
+            autoActiveFirstOption
+            #autoStudents="matAutocomplete"
+            [displayWith]="displayStudentFn"
+          >
+            <mat-option
+              *ngFor="let option of filteredStudents | async"
+              [value]="{
+                id: option.id,
+                name: option.name,
+                lastname: option.lastname
+              }"
+            >
+              {{ option | fullname }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+    </form>
+  </ng-template>
+</div>
+<div mat-dialog-actions>
+  <button (click)="onSubmit()" mat-flat-button type="button" color="primary">
+    Guardar
+  </button>
+  <button mat-dialog-close mat-button type="button">Cancelar</button>
+</div>

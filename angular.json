@@ -25,10 +25,10 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap-utilities.min.css",
               "node_modules/bootstrap/dist/css/bootstrap-grid.min.css",
-              "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/indigo-pink.css"
             ],
             "scripts": []
           },

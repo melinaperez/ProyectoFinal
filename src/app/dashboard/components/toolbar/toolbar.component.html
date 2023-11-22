@@ -1,4 +1,4 @@
-<mat-toolbar class="flex justify-content-between" color="primary">
+<mat-toolbar class="flex justify-content-between">
   <button
     (click)="toggleSidebar.emit()"
     mat-icon-button
@@ -14,8 +14,10 @@
   />
   <span class="spacer"> </span>
   <button
-    mat-button
+    mat-raised-button
+    style="background-color: aliceblue"
     (click)="logout()"
+    color="accent"
   >
     Cerrar sesión
   </button>
