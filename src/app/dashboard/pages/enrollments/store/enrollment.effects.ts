@@ -71,6 +71,19 @@ export class EnrollmentEffects {
     )
   );
 
+  getEnrollmentByID$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(EnrollmentActions.detailEnronllment),
+      concatMap((action: { idEnrollment: number }) =>
+        this.getEnrollmentByID(action.idEnrollment).pipe(
+          map((data: any) =>
+            EnrollmentActions.detailEnrollmentsSuccess({ data })
+          )
+        )
+      )
+    )
+  );
+
   constructor(private actions$: Actions, private httpClient: HttpClient) {}
 
   createEnrollment(payload: CreateEnrollmentPayload): Observable<Enrollment> {
@@ -106,6 +119,12 @@ export class EnrollmentEffects {
           students,
         };
       })
+    );
+  }
+
+  getEnrollmentByID(id: number): Observable<any> {
+    return this.httpClient.get<Enrollment>(
+      `${environment.baseUrl}/enrollments/${id}?_expand=course&_expand=student`
     );
   }
 }

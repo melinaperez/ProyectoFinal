@@ -12,6 +12,7 @@ export interface State {
   courseOptions: Course[];
   studentOptions: Student[];
   enrollments: Enrollment[];
+  enrollment: Enrollment;
   error: unknown;
 }
 
@@ -22,6 +23,7 @@ export const initialState: State = {
   courseOptions: [],
   studentOptions: [],
   error: null,
+  enrollment: new Enrollment(),
 };
 
 export const reducer = createReducer(
@@ -68,6 +70,12 @@ export const reducer = createReducer(
     ...state,
     isLoading: false,
     error,
+  })),
+
+  on(EnrollmentActions.detailEnrollmentsSuccess, (state, { data }) => ({
+    ...state,
+    enrollment: data,
+    isLoading: false,
   }))
 );
 

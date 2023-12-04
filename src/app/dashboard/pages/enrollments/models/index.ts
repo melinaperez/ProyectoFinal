@@ -1,11 +1,11 @@
 import { Course } from '../../courses/models/course.model';
 import { Student } from '../../students/models';
 
-export interface Enrollment {
-  id: number;
-  courseId: number;
-  studentId: number;
-  inscriptionDate: Date;
+export class Enrollment {
+  id: number = 0;
+  courseId: number = 0;
+  studentId: number = 0;
+  inscriptionDate: Date = new Date();
   course?: Course;
   student?: Student;
 }

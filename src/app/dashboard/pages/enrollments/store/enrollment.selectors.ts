@@ -29,3 +29,8 @@ export const selectIsLoadingOptions = createSelector(
   selectEnrollmentState,
   (state) => state.isLoadingOptions
 );
+
+export const selectDetail = createSelector(
+  selectEnrollmentState,
+  (state) => state.enrollment
+);

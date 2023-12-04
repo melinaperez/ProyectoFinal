@@ -1,1 +1,55 @@
-<p>enrollments-details works!</p>
+<div *ngIf="enrollment$ | async as enrollment">
+  <h3><strong>Datos del alumno</strong></h3>
+  <mat-divider></mat-divider>
+  <mat-list>
+    <mat-list-item>
+      <span matListItemTitle
+        >{{ enrollment.student?.name }} {{ enrollment.student?.lastname }}</span
+      >
+      <span matListItemLine>Nombre completo</span>
+    </mat-list-item>
+    <mat-list-item>
+      <span matListItemTitle>{{ enrollment.student?.email }}</span>
+      <span>Correo electrónico</span>
+    </mat-list-item>
+    <mat-list-item>
+      <span matListItemTitle>{{ enrollment.student?.telephone }}</span>
+      <span matListItemLine>Teléfono</span>
+    </mat-list-item>
+  </mat-list>
+
+  <h3><strong>Datos del curso</strong></h3>
+  <mat-divider></mat-divider>
+  <mat-list>
+    <mat-list-item>
+      <span matListItemTitle>{{ enrollment.course?.name }}</span>
+      <span matListItemLine>Nombre</span>
+    </mat-list-item>
+    <mat-list-item>
+      <span matListItemTitle>{{ enrollment.course?.duration }}</span>
+      <span>Duración (horas)</span>
+    </mat-list-item>
+    <mat-list-item>
+      <span matListItemTitle>{{
+        enrollment.course?.startDate | date : "dd/MM/yyyy"
+      }}</span>
+      <span matListItemLine>Inicio</span>
+    </mat-list-item>
+    <mat-list-item>
+      <span matListItemTitle>{{
+        enrollment.course?.endDate | date : "dd/MM/yyyy"
+      }}</span>
+      <span matListItemLine>Finalización</span>
+    </mat-list-item>
+  </mat-list>
+
+  <button
+    mat-flat-button
+    color="warn"
+    *ngIf="(userRole$ | async) === 'ADMIN'"
+    (click)="deleteEnrollment(enrollment.id)"
+    style="justify-content: right"
+  >
+    Eliminar inscripción
+  </button>
+</div>

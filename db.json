@@ -186,6 +186,17 @@
       "registrationDate": "2023-11-14T18:22:27.376Z",
       "password": "123456",
       "token": "akF1UO0a9Ze2M7d0cGeN"
+    },
+    {
+      "id": 18,
+      "name": "Melina",
+      "lastname": "Prueba",
+      "dni": "12222222222",
+      "email": "melina@mail.com",
+      "role": "USER",
+      "registrationDate": "2023-12-04T22:40:51.484Z",
+      "password": "123456",
+      "token": "Tp8g7t9AFu9ejKCiCgfs"
     }
   ],
   "courses": [
@@ -575,12 +586,6 @@
   ],
   "enrollments": [
     {
-      "courseId": 1,
-      "studentId": 1,
-      "inscriptionDate": "2023-12-04T20:52:56.981Z",
-      "id": 1
-    },
-    {
       "courseId": 2,
       "studentId": 1,
       "inscriptionDate": "2023-12-04T20:53:06.126Z",
@@ -591,6 +596,12 @@
       "studentId": 2,
       "inscriptionDate": "2023-12-04T20:53:13.417Z",
       "id": 3
+    },
+    {
+      "courseId": 1,
+      "studentId": 3,
+      "inscriptionDate": "2023-12-04T22:39:42.555Z",
+      "id": 4
     }
   ]
 }
