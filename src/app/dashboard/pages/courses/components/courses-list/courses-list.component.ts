@@ -11,6 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Course } from '../../models/course.model';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { Observable } from 'rxjs';
+import { Role } from '../../../users/models/user.models';
 
 @Component({
   selector: 'app-courses-list',
@@ -29,6 +30,9 @@ export class CoursesListComponent {
 
   @Output()
   editCourse = new EventEmitter<Course>();
+
+  @Input()
+  userRole: Role = Role.USER;
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {}
 

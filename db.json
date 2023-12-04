@@ -576,27 +576,21 @@
   "enrollments": [
     {
       "courseId": 1,
-      "studentId": 3,
-      "inscriptionDate": "2023-11-22T18:01:28.898Z",
+      "studentId": 1,
+      "inscriptionDate": "2023-12-04T20:52:56.981Z",
       "id": 1
     },
     {
       "courseId": 2,
-      "studentId": 2,
-      "inscriptionDate": "2023-11-22T18:01:43.649Z",
+      "studentId": 1,
+      "inscriptionDate": "2023-12-04T20:53:06.126Z",
       "id": 2
     },
     {
       "courseId": 3,
-      "studentId": 3,
-      "inscriptionDate": "2023-11-22T18:59:38.206Z",
+      "studentId": 2,
+      "inscriptionDate": "2023-12-04T20:53:13.417Z",
       "id": 3
-    },
-    {
-      "courseId": 4,
-      "studentId": 1,
-      "inscriptionDate": "2023-11-22T19:48:04.842Z",
-      "id": 4
     }
   ]
 }

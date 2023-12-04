@@ -10,6 +10,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { Student } from '../../models';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, Sort } from '@angular/material/sort';
+import { Role } from '../../../users/models/user.models';
 
 @Component({
   selector: 'app-students-list',
@@ -28,6 +29,9 @@ export class StudentsListComponent implements AfterViewInit {
 
   @Output()
   editStudent = new EventEmitter<Student>();
+
+  @Input()
+  userRole: Role = Role.USER;
 
   constructor() {}
 

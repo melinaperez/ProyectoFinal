@@ -1,6 +1,7 @@
 <h1 fontWeight="bolder" appHeadline>Listado de Cursos</h1>
 <button
   mat-flat-button
+  *ngIf="(userRole$ | async) === 'ADMIN'"
   color="primary"
   (click)="openCourseDialog()"
   class="custom-button"
@@ -12,4 +13,5 @@
   [dataSource]="coursesObtained"
   (editCourse)="onEditCourse($event)"
   (deleteCourse)="onDeleteCourse($event)"
+  [userRole]="(userRole$ | async) || userRoleDefault"
 ></app-courses-list>

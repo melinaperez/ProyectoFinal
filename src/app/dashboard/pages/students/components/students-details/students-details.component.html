@@ -104,8 +104,20 @@
           <mat-list>
             <mat-card *ngFor="let item of courses$ | async">
               <mat-list-item>
-                <span matListItemTitle>{{ item.course.name }}</span>
+                <span matListItemTitle
+                  ><strong>{{ item.course.name }}</strong></span
+                >
               </mat-list-item>
+              <mat-card-actions>
+                <button
+                  mat-flat-button
+                  *ngIf="(userRole$ | async) == 'ADMIN'"
+                  (click)="deleteEnrollment(item.id)"
+                  color="warn"
+                >
+                  Eliminar inscripción
+                </button>
+              </mat-card-actions>
             </mat-card>
           </mat-list>
         </ng-template>

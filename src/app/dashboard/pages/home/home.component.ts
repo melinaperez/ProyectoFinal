@@ -18,7 +18,7 @@ import { Enrollment } from '../enrollments/models';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   slides: CarouselImage[] = new Array(3).fill({
     id: -1,
     src: '',
@@ -29,10 +29,6 @@ export class HomeComponent implements OnInit {
   usersLength$: Observable<number>;
   studentsLength: number = 0;
   studentsLength$: Observable<number>;
-  enrollmentsLength: number = 0;
-  // enrollmentsLength$: Observable<number>;
-  enrollments$: Observable<Enrollment[]>;
-  isLoadingEnrollments$: Observable<boolean>;
   metrics: Metric[] = [];
 
   constructor(
@@ -41,8 +37,6 @@ export class HomeComponent implements OnInit {
     private store: Store,
     private router: Router
   ) {
-    this.enrollments$ = this.store.select(selectEnrollments);
-    this.isLoadingEnrollments$ = this.store.select(selectEnrollmentsIsLoading);
     this.slides = [
       {
         src: 'https://www.infobae.com/new-resizer/kHZdEQoZ7wy6MmLa1i-gdbF1CAY=/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/04/24133716/avengers-endgame-22.jpg',
@@ -84,26 +78,6 @@ export class HomeComponent implements OnInit {
         entity: 'users',
       },
     ];
-  }
-
-  ngOnInit() {
-    console.log('Arranca el oninit');
-
-    this.store.dispatch(EnrollmentActions.loadEnrollments());
-
-    // Esperar hasta que los enrollments estén cargados antes de suscribirse
-    this.isLoadingEnrollments$
-      .pipe(
-        take(1) // Tomar solo los dos primeros valores (puede ajustarse según sea necesario)
-      )
-      .subscribe((isLoading) => {
-        if (!isLoading) {
-          // Enrollments cargados, suscribirse
-          this.enrollments$.pipe(take(1)).subscribe((data) => {
-            this.enrollmentsLength = data.length;
-          });
-        }
-      });
   }
   get(get: string) {
     this.router.navigate([`dashboard/${get}`]);

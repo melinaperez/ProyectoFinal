@@ -55,6 +55,7 @@
         <button
           mat-icon-button
           color="primary"
+          *ngIf="userRole === 'ADMIN'"
           (click)="editStudent.emit(student)"
         >
           <mat-icon>edit</mat-icon>
@@ -62,6 +63,7 @@
         <button
           mat-icon-button
           color="warn"
+          *ngIf="userRole === 'ADMIN'"
           (click)="deleteStudent.emit(student.id)"
         >
           <mat-icon>delete</mat-icon>

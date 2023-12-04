@@ -2,6 +2,7 @@
 <button
   mat-flat-button
   color="primary"
+  *ngIf="(userRole$ | async) === 'ADMIN'"
   (click)="openTeacherDialog()"
   class="custom-button"
 >
@@ -12,4 +13,5 @@
   [dataSource]="teachersObtained"
   (deleteTeacher)="onDeleteTeacher($event)"
   (editTeacher)="onEditTeacher($event)"
+  [userRole]="(userRole$ | async) || userRoleDefault"
 ></app-teachers-list>

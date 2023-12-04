@@ -9,6 +9,9 @@ import { CoursesService } from './courses.service';
 import { Observable, map } from 'rxjs';
 import { CoursesFormComponent } from './components/courses-form/courses-form.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Role } from '../users/models/user.models';
+import { Store } from '@ngrx/store';
+import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
 
 @Component({
   selector: 'app-courses',
@@ -18,12 +21,19 @@ import { MatDialog } from '@angular/material/dialog';
 export class CoursesComponent implements AfterContentChecked {
   courses = new MatTableDataSource<Course>();
   courses$: Observable<MatTableDataSource<Course>>;
+  userRole$: Observable<Role | undefined>;
+  userRoleDefault: Role = Role.USER;
 
   constructor(
     private coursesService: CoursesService,
     private matDialog: MatDialog,
-    private changeDetector: ChangeDetectorRef
+    private changeDetector: ChangeDetectorRef,
+    private store: Store
   ) {
+    this.userRole$ = this.store
+      .select(selectAuthUser)
+      .pipe(map((u) => u?.role));
+
     this.courses$ = this.coursesService.getCourses$().pipe(
       map((data) => {
         this.courses.data = data;

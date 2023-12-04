@@ -16,6 +16,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FullnamePipe } from './pipes/fullname.pipe';
 import { FormErrorsPipe } from './pipes/form-errors.pipe';
@@ -40,6 +41,7 @@ import { HeadlineDirective } from './directives/headline.directive';
     MatCardModule,
     MatTabsModule,
     MatChipsModule,
+    MatGridListModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
     FullnamePipe,

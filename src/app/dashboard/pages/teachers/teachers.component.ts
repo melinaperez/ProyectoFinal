@@ -5,6 +5,9 @@ import { Observable, map } from 'rxjs';
 import { TeachersService } from './services/teachers.service';
 import { MatDialog } from '@angular/material/dialog';
 import { TeachersFormComponent } from './components/teachers-form/teachers-form.component';
+import { Store } from '@ngrx/store';
+import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
+import { Role } from '../users/models/user.models';
 
 @Component({
   selector: 'app-teachers',
@@ -14,11 +17,18 @@ import { TeachersFormComponent } from './components/teachers-form/teachers-form.
 export class TeachersComponent {
   teachers = new MatTableDataSource<Teacher>();
   teachers$: Observable<MatTableDataSource<Teacher>>;
+  userRole$: Observable<Role | undefined>;
+  userRoleDefault: Role = Role.USER;
 
   constructor(
     private teachersService: TeachersService,
-    private matDialog: MatDialog
+    private matDialog: MatDialog,
+    private store: Store
   ) {
+    this.userRole$ = this.store
+      .select(selectAuthUser)
+      .pipe(map((u) => u?.role));
+
     this.teachers$ = this.teachersService.getTeachers$().pipe(
       map((data) => {
         this.teachers.data = data;

@@ -9,6 +9,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Teacher } from '../../models/teacher.model';
+import { Role } from '../../../users/models/user.models';
 
 @Component({
   selector: 'app-teachers-list',
@@ -27,6 +28,9 @@ export class TeachersListComponent {
 
   @Output()
   editTeacher = new EventEmitter<Teacher>();
+
+  @Input()
+  userRole: Role = Role.USER;
 
   constructor() {}
 

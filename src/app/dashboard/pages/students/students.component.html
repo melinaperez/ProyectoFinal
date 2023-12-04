@@ -12,4 +12,5 @@
   [dataSource]="studentsObtained"
   (deleteStudent)="onDeleteStudent($event)"
   (editStudent)="onEditStudent($event)"
+  [userRole]="(userRole$ | async) || userRoleDefault"
 ></app-students-list>

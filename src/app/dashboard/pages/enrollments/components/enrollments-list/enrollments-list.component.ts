@@ -10,13 +10,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Enrollment } from '../../models';
-import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
-import {
-  selectEnrollments,
-  selectEnrollmentsIsLoading,
-} from '../../store/enrollment.selectors';
-import { EnrollmentActions } from '../../store/enrollment.actions';
+import { Role } from '../../../users/models/user.models';
 
 @Component({
   selector: 'app-enrollments-list',
@@ -36,6 +30,9 @@ export class EnrollmentsListComponent {
   @Output()
   editEnrollment = new EventEmitter<Enrollment>();
 
+  @Input()
+  userRole: Role = Role.USER;
+
   constructor() {}
 
   displayedColumns: string[] = [
@@ -52,8 +49,6 @@ export class EnrollmentsListComponent {
   }
 
   applyFilter(event: Event) {
-    console.log(event);
-
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 

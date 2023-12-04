@@ -10,6 +10,9 @@ import { Student } from './models';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable, map } from 'rxjs';
 import { StudentsService } from './students.service';
+import { Store } from '@ngrx/store';
+import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
+import { Role } from '../users/models/user.models';
 
 @Component({
   selector: 'app-students',
@@ -19,12 +22,18 @@ import { StudentsService } from './students.service';
 export class StudentsComponent implements AfterContentChecked {
   students = new MatTableDataSource<Student>();
   students$: Observable<MatTableDataSource<Student>>;
+  userRole$: Observable<Role | undefined>;
+  userRoleDefault: Role = Role.USER;
 
   constructor(
     private studentsService: StudentsService,
     private matDialog: MatDialog,
-    private changeDetector: ChangeDetectorRef
+    private changeDetector: ChangeDetectorRef,
+    private store: Store
   ) {
+    this.userRole$ = this.store
+      .select(selectAuthUser)
+      .pipe(map((u) => u?.role));
     this.students$ = this.studentsService.getStudents$().pipe(
       map((data) => {
         this.students.data = data;
