@@ -1,17 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users/services/users.service';
-import { Observable, map } from 'rxjs';
+import { Observable, map, take } from 'rxjs';
 import { StudentsService } from '../students/students.service';
+import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { Metric } from './models/metric';
 import { CarouselImage } from '../../components/carousel/models';
+import { EnrollmentActions } from '../enrollments/store/enrollment.actions';
+import {
+  selectEnrollments,
+  selectEnrollmentsIsLoading,
+} from '../enrollments/store/enrollment.selectors';
+import { Enrollment } from '../enrollments/models';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   slides: CarouselImage[] = new Array(3).fill({
     id: -1,
     src: '',
@@ -22,14 +29,20 @@ export class HomeComponent {
   usersLength$: Observable<number>;
   studentsLength: number = 0;
   studentsLength$: Observable<number>;
-  today: Date = new Date();
+  enrollmentsLength: number = 0;
+  // enrollmentsLength$: Observable<number>;
+  enrollments$: Observable<Enrollment[]>;
+  isLoadingEnrollments$: Observable<boolean>;
   metrics: Metric[] = [];
 
   constructor(
     private usersService: UsersService,
     private studentsService: StudentsService,
+    private store: Store,
     private router: Router
   ) {
+    this.enrollments$ = this.store.select(selectEnrollments);
+    this.isLoadingEnrollments$ = this.store.select(selectEnrollmentsIsLoading);
     this.slides = [
       {
         src: 'https://www.infobae.com/new-resizer/kHZdEQoZ7wy6MmLa1i-gdbF1CAY=/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/04/24133716/avengers-endgame-22.jpg',
@@ -73,6 +86,25 @@ export class HomeComponent {
     ];
   }
 
+  ngOnInit() {
+    console.log('Arranca el oninit');
+
+    this.store.dispatch(EnrollmentActions.loadEnrollments());
+
+    // Esperar hasta que los enrollments estén cargados antes de suscribirse
+    this.isLoadingEnrollments$
+      .pipe(
+        take(1) // Tomar solo los dos primeros valores (puede ajustarse según sea necesario)
+      )
+      .subscribe((isLoading) => {
+        if (!isLoading) {
+          // Enrollments cargados, suscribirse
+          this.enrollments$.pipe(take(1)).subscribe((data) => {
+            this.enrollmentsLength = data.length;
+          });
+        }
+      });
+  }
   get(get: string) {
     this.router.navigate([`dashboard/${get}`]);
   }

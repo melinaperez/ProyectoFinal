@@ -1,24 +1,18 @@
+$color-gris-claro: #f2f2f2;
+$color-gris-oscuro: #333333;
 .example-container {
   height: 100vh;
-  background-color: #fcf7ef;
+  background: linear-gradient(to bottom, $color-gris-claro, $color-gris-oscuro);
 }
 
 .example-sidenav-content {
-  // display: flex;
   height: 100%;
-  // align-items: center;
-  // justify-content: center;
 }
 
-.example-sidenav {
+.sidenav {
   padding: 20px;
 }
 
 .example-card {
   max-width: 400px;
-}
-
-.example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
 }

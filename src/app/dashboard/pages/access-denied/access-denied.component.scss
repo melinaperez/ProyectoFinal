@@ -3,6 +3,7 @@
   margin: 50px auto;
   text-align: center;
   align-items: center;
+  background-color: #f0f0f0;
 }
 
 mat-card-actions {
@@ -12,4 +13,9 @@ mat-card-actions {
 
 mat-card-header {
   justify-content: center;
+}
+
+.custom-button {
+  background-color: #5c5c5c;
+  color: white;
 }

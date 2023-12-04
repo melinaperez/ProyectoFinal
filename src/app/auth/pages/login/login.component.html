@@ -1,6 +1,6 @@
 <h1>Iniciar sesión</h1>
 
-<form [formGroup]="loginForm">
+<form [formGroup]="loginForm" class="d-flex flex-column align-items-center">
   <div>
     <mat-form-field class="w-100" appearance="outline">
       <mat-label>Email</mat-label>
@@ -12,7 +12,11 @@
     </mat-form-field>
   </div>
 
-  <button (click)="login()" mat-flat-button color="primary">
+  <button
+    mat-raised-button
+    (click)="login()"
+    style="background: linear-gradient(#989a9c, #4e4949)"
+  >
     Iniciar sesión
   </button>
 </form>

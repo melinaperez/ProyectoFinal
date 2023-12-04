@@ -1,11 +1,15 @@
 table {
   width: 100%;
+  background-color: #f0f0f0;
 }
 
 th.mat-sort-header-sorted {
   color: black;
 }
 
+mat-paginator {
+  background-color: #f0f0f0;
+}
 .row-search {
   display: flex;
   align-items: flex-end;

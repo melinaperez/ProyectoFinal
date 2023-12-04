@@ -9,3 +9,12 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+mat-paginator {
+  background-color: red;
+}
+
+table {
+  width: 100%;
+  // background-color: #f2f2f2;
+}

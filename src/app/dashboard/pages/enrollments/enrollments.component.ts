@@ -29,6 +29,7 @@ export class EnrollmentsComponent implements AfterContentChecked {
     this.store.dispatch(EnrollmentActions.loadEnrollments());
     this.enrollments$ = this.store.select(selectEnrollments).pipe(
       map((data) => {
+        console.log('Dataaa1', data.length);
         this.enrollments.data = data;
         return this.enrollments;
       })
@@ -50,26 +51,4 @@ export class EnrollmentsComponent implements AfterContentChecked {
         EnrollmentActions.deleteEnrollment({ idEnrollment: enrollmentId })
       );
   }
-
-  // onEditEnrollment(enrollment: Enrollment): void {
-  //   this.matDialog
-  //     .open(EnrollmentsFormComponent, {
-  //       data: enrollment,
-  //     })
-  //     .afterClosed()
-  //     .subscribe({
-  //       next: (v) => {
-  //         if (!!v) {
-  //           this.enrollments$ = this.enrollmentsService
-  //             .editEnrollment$(enrollment.id, v)
-  //             .pipe(
-  //               map((data) => {
-  //                 this.enrollments.data = data;
-  //                 return this.enrollments;
-  //               })
-  //             );
-  //         }
-  //       },
-  //     });
-  // }
 }
